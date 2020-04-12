@@ -357,7 +357,7 @@ table>tr\*行数>td\*列数 + tab
 |Align|	设置表格在网页中的对齐方式|	Left左 Right右 Center居中|
 |bgcolor|	设置背景颜色|	white ,red,green|
 
-[表格属性](./1.标签练习/图片1.png)
+![表格属性](./1.标签练习/图片1.png)
 ### 11.7 表头
 caption 元素定义表格标题
 caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。
