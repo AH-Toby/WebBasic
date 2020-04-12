@@ -143,7 +143,7 @@ HTML网页中任何元素的实现都要依靠HTML标记，要想在网页中显
 <!-- 1.先定义一个锚点 -->
 <p id="sd"></p>
 <!-- 2. 超链接到锚点 -->
-<a href="id">超链接到锚点</a>
+<a href="#sd">超链接到锚点</a>
 ```
 - 空链  不知道链接到那个页面的时候，用空链
 ```HTML
@@ -211,7 +211,7 @@ HTML网页中任何元素的实现都要依靠HTML标记，要想在网页中显
   <li></li>
 </ol>
 ```
-alue1表示有序列表项目符号的类型, value2表示项目开始的数值. start是编号开始的数字，如start=2则编号从2开始，如果从1开始可以省略，或是在< li>标签中设定value＝"n"改变列表行项目的特定编号，例如< li value="7">。type=用于编号的数字,字母等的类型，如type=a，则编号用英文字母。使用这些属性，把它们放在< ol>或< li>的的初始标签中
+value1表示有序列表项目符号的类型, value2表示项目开始的数值. start是编号开始的数字，如start=2则编号从2开始，如果从1开始可以省略，或是在< li>标签中设定value＝"n"改变列表行项目的特定编号，例如< li value="7">。type=用于编号的数字,字母等的类型，如type=a，则编号用英文字母。使用这些属性，把它们放在< ol>或< li>的的初始标签中
 
 Type属性如下图
 |type类型|	        描述|
@@ -233,7 +233,278 @@ Type属性如下图
 </dl>
 
 ```
-## 9:音乐标签
+## 9.音乐标签
 ```HTML
 <embed type="video/quicktime" src="#" width="300" height="300">
 ```
+## 10.Meta标签介绍
+meta 的属性有两种：name和http- equiv
+
+name属性主要用于描述网页，对应于content（网页内容）
+
+### 10.1 \<meta charset="UTF-8">编码字符集
+
+```HTML
+<!-- 编码字符集 -->
+<meta charset="UTF-8">
+```
+### 10.2 \<meta name="KEYWords" contect="">关键词
+作用：向搜索引擎说明你的网页的关键词；
+```HTML
+<meta name="keywords" content="前端学习"，“html5学习”，“在线学习”>
+```
+### 10.3 \<meta name="DEscription" contect="">网页描述
+作用：告诉搜索引擎你的站点的主要内容；
+```HTML
+<meta name="DEscription" contect="这个网页用于网页描述">
+```
+### 10.4 \<meta name="Generator" contect="">说明生成工具
+作用：用以说明生成工具
+```HTML
+<meta name="generator" content="Microsoft FrontPage 4.0">
+```
+### 10.5 \<meta  name="Author"  contect="">制作的作者
+作用：告诉搜索引擎你的站点的制作的作者
+```HTML
+<meta name="author" content="toby">
+```
+### 10.7 \<meta name="Robots" contect= "all">爬虫规则
+作用：设置爬虫规则
+```HTML
+<meta name="Robots" content="all|none|index|noindex|follow|nofollow">
+```
+其中的属性说明如下：
+- 设定为all：文件将被检索，且页面上的链接可以被查询；
+- 设定为none：文件将不被检索，且页面上的链接不可以被查询；
+- 设定为index：文件将被检索；
+- 设定为follow：页面上的链接可以被查询；
+- 设定为noindex：文件将不被检索，但页面上的链接可以被查询；
+- 设定为nofollow：文件将不被检索，页面上的链接可以被查询。
+### 10.6 \<meta http-equiv="Refresh" content="时间;网页名称">网页重定向
+作用：设置多少秒内网页重定向
+```HTML
+<meta name="Refresh" content="5;http://www.baidu.com">
+```
+### 10.7 \<link rel="stylesheet" href="位置"> 链接外部样式表
+作用：链接外部样式表
+```HTML
+<link rel="stylesheet" href="/css/master.css">
+```
+### 10.8 \<link rel="icon" href="位置"> 网页小图标
+作用：链接网页小图标
+```HTML
+<link rel="icon" href="favicon.ico">
+```
+
+## 11.HTML表格
+### 11.1 \<table>
+\<table>...\</table>标签用于在HTML文档中创建表格。它包含表名和表格本身内容的代码。表格的基本单元是单元格，用\<td>...\</td>标签定义。
+### 11.2\<tr>
+表格行用\<tr>标签定义，由单元格构成。多个行结合在一起就构成一个表格，这反映在用于创建表格的HTML语法中。表格的每一行都用\<tr>标签表示，并用相应的\</tr> 结束。
+### 11.3 \<td>
+表格的每一行又有若干表格单元格，用\<td>...\</td>标签表示。TD是"表格数据( Table Data)”的英文缩写。\<td>标签定义一个列，嵌套于<tr>标签内。
+border属性是最常用的属性，可用于定义表格的单元格和结构。该属性指定边框的厚度，如果其值设置为零(0)，则不显示边框。
+
+### 11.4 创建表格的基本语法：
+```HTML
+<table>
+  <tr>
+    <td>单元格内容</td>
+  </tr>
+</table>
+```
+创建表格时，一般情况下分3步：
+- 第一步：创建表格标签\< table>…\</table>。
+- 第二步：在表格标签\<table>…\</table>里创建行标签\<tr>...\</tr>，可以有多行。
+- 第三步：在行标签\<tr>...\</tr>里创建单元格标签\<td>...\</td>，可以有多个单元格。
+
+### 11.5 创建表格的标准语法：
+在使用表格进行布局时，可以将表格划分为头部、主体和页脚，具体 如下所示：
+- \<thead>\</thead>：用于定义表格的头部，必须位于\<table>\</table>标记中，一般包含网页的logo和导航等头部信息。
+- \<tfoot>\</ tfoot >：用于定义表格的页脚，位于\<table>\</table>标记中\<thead>\</thead>标记之后，一般包含网页底部的企业信息等。
+- \<tbody>\</tbody>：用于定义表格的主体，位于\<table>\</table>标记中\<tfoot>\</ tfoot >标记之后，一般包含网页中除头部和底部之外的其他内容。
+```HTML
+<table>
+  <thead> <!-- 头部 -->
+    <tr>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody> <!-- 内容 -->
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot> <!-- 尾部 -->
+    <tr>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+```
+快速添加表格
+table>tr\*行数>td\*列数 + tab
+### 11.6 表格中的属性
+|属性名|	含义|	常用属性值|
+|:---:|:---:|:---:|
+|Border|	设置边框 默认为0 没有边框|	单位为px  像素值|
+|Cellspacing|	设置单元格与单元格之间的距离|	单位为px 像素值 默认2px|
+|Cellpadding|	设置文字与单元格之间的距离	|默认1px|
+|Width|	设置表格的宽度|	单位px|
+|Height|	设置表格高度|	单位px|
+|Align|	设置表格在网页中的对齐方式|	Left左 Right右 Center居中|
+|bgcolor|	设置背景颜色|	white ,red,green|
+![表格属性](./1.标签练习/图片1.png)
+### 11.7 表头
+caption 元素定义表格标题
+caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。
+```HTML
+<table>
+  <caption>表头</caption>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+```
+### 11.8 合并单元格
+colspan=”行数”  合并同一行上的单元格
+rowspan=”列数”  合并同一列上的单元格
+```HTML
+<table border="1" align="Center" width="500" height="300" cellspacing="0" cellspadding="10">
+  <caption>表单</caption>
+  <tr>
+    <td>姓名</td>
+    <td>性别</td>
+    <td>年龄</td>
+    <td colspan="3">职位</td>
+  </tr>
+  <tr>
+    <td>张三</td>
+    <td>男</td>
+    <td>11</td>
+    <td rowspan="2">前端工程师</td>
+  </tr>
+  <tr>
+    <td>李四</td>
+    <td>女</td>
+    <td>18</td>
+  </tr>
+</table>
+```
+### 11.9表格标题、边框颜色、内容垂直对齐
+\<th>标记及其属性
+表头一般位于表格的第一行或第一列，其文本加粗居中，如下图所示，即为设置了表头的表格。设置表头非常简单，只需用表头标记\<th>\</th>替代相应的单元格标记\<td>\</td>即可。
+![表格标题属性](./1.标签练习/图片2.png)
+```HTML
+<tr>
+  <th>姓名</th>
+  <th>性别</th>
+  <th>年龄</th>
+</tr>
+```
+边框颜色bordercolor：
+```HTML
+  <table border="1" width="500" height="300" cellspacing="0" bordercolor="red">
+```
+内容垂直对齐 valign:
+```HTML
+<tr>
+  <td valign="top">李四</td>
+  <td valign="middle">女</td>
+  <td valign="bottom">19</td>
+</tr>
+```
+- 上部：top
+- 居中：middle
+- 下部：bottom
+### 11.10 练习制作细线表格
+**注意：表格默认的线宽是2px，要做到1px必须按照以下方法来制作**
+![制作细线表格案例](./1.标签练习/图片3.png)
+```HTML
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table width="500" height="300" bgcolor="green" cellspacing="1">
+      <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
+```
+## 12.表单from
+表单的作用是收集信息
+
+语法：
+```HTML
+<form class="" action="index.html" method="post">
+
+</form>
+```
+- Name ：定义表单的名称
+- Method: 定义表单结果从浏览器传送到服务器的方式，默认参数为：get ；
+- Action ：用来指定表单处理程序的位置(服务器端脚本处理程序） 
+- Fieldset：把表单分组
+- Legend：分组名称
+
+### 12.1 input控件
+语法：
+在上面的语法中，\<input />标记为单标记，type属性为其最基本的属性，其取值有多种，用于指定不同的控件类型。除了type属性之外，\<input />标记还可以定义很多其他的属性，其常用属性如下表所示。
+```HTML
+<input  type=“控件类型”>
+```
+![input控件属性](./1.标签练习/图片4.png)
+```HTML
+
+```
+### 12.2 textarea控件
+如果需要输入大量的信息，就需要用到<textarea></textarea>标记。通过textarea控件可以轻松地创建多行文本输入框，其基本语法格式如下：
+语法：
+```HTML
+<textarea cols="每行中的字符数" rows="显示的行数">
+       文本内容
+</textarea>
+```
+- Cols:相当于宽度
+- Rows:相当于高度
+### 12.3 select控件
+```HTML
+<select>
+        <option>选项1</option>
+        <option>选项2</option>
+        <option>选项3</option>
+       ...
+    </select>
+```
+![input控件属性](./1.标签练习/图片5.png)
+
+值得一提的是，在HTML中，可以为\<select>和\<option>标记定义属性，以改变下拉菜单的外观显示效果，具体如下表所示。
+![input控件属性](./1.标签练习/图片6.png)
+### 12.4 组合表单
+- \<fieldset> 标签没有必需的或唯一的属性
+- \<legend> 标签为 fieldset 元素定义标题
