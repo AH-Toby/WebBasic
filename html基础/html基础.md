@@ -483,10 +483,62 @@ rowspan=”列数”  合并同一列上的单元格
 ```
 ![input控件属性](./1.标签练习/图片4.png)
 ```HTML
-
+<input type="text" name="username" value=“前端” maxlength="6" readonly="readonly" disabled="disabled">
 ```
+#### 文本输入框 text
+```HTML
+<input type="text" name="username" value=“前端” maxlength="6" readonly="readonly" disabled="disabled">
+```
+- maxlength="6"    限制输入字符长度
+- readonly=”readonly”  将输入框设置为只读状态（不能编辑）
+- disabled="disabled"  输入框未激活状态
+- name="username"   输入框的名称
+- value="大前端"     将输入框的内容传给处理文件
+#### 密码输入框 password
+```HTML
+<input type="password" name="pwd">
+```
+**注意：文本输入框的所有属性对密码输入框都有效。**
+#### 单选框 radio
+```HTML
+<input type="radio" name="gender">男
+```
+**★只有将name的值设置相同的时候，才能实现单选效果。**
+**★checked=”checked” 设置默认选择项。**
+#### 上传 file
+```HTML
+<input type="file" name="" value="">
+```
+#### 文件提交 submit
+```HTML
+<input type="submit" name="" value="">
+```
+**★：可以实现信息提交功能**
+#### 普通按钮 button
+```HTML
+<input type="button" name="" value="普通按钮">
+```
+**★不能提交信息，配合JS使用。**
+#### 图片按钮 image
+```HTML
+<input type="image" src="">
+```
+**★图片按钮可实现信息提交功能**
+#### 重置按钮 reset
+```HTML
+<input type="reset">
+```
+**★将信息重置到默认状态**
+#### 多选框 checkbox
+```HTML
+<input type="checkbox" name="" value="">
+```
+**Checked=”checked” 设置默认选中项**
+#### 其他功能
+![其他功能](“./1.标签练习/图片7.png”)
+
 ### 12.2 textarea控件
-如果需要输入大量的信息，就需要用到<textarea></textarea>标记。通过textarea控件可以轻松地创建多行文本输入框，其基本语法格式如下：
+如果需要输入大量的信息，就需要用到\<textarea>\</textarea>标记。通过textarea控件可以轻松地创建多行文本输入框，其基本语法格式如下：
 语法：
 ```HTML
 <textarea cols="每行中的字符数" rows="显示的行数">
@@ -495,6 +547,7 @@ rowspan=”列数”  合并同一列上的单元格
 ```
 - Cols:相当于宽度
 - Rows:相当于高度
+
 ### 12.3 select控件
 ```HTML
 <select>
@@ -504,10 +557,30 @@ rowspan=”列数”  合并同一列上的单元格
        ...
     </select>
 ```
+
 ![input控件属性](./1.标签练习/图片5.png)
 
 值得一提的是，在HTML中，可以为\<select>和\<option>标记定义属性，以改变下拉菜单的外观显示效果，具体如下表所示。
 ![input控件属性](./1.标签练习/图片6.png)
+
 ### 12.4 组合表单
 - \<fieldset> 标签没有必需的或唯一的属性
 - \<legend> 标签为 fieldset 元素定义标题
+
+## 13.标签语义化
+好的语义化的网站标准就是去掉样式表文件之后，结构依然很清晰。
+标签语义化概念：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）
+
+标签语义化意义：
+- 1:网页结构合理
+- 2:有利于seo:和搜索引擎建立良好沟通，有了良好的结构和语义你的网页内容自然容易被搜索引擎抓取；
+- 3:方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）
+- 4:便于团队开发和维护
+
+1：尽可能少的使用无语义的标签div和span；
+
+2：在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；
+
+3：不要使用纯样式标签，如：b、font、u等，改用css设置。
+
+4：需要强调的文本，可以包含在strong或者em标签中strong默认样式是加粗（不要用b），em是斜体（不用i）；
