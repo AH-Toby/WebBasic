@@ -2,4 +2,4 @@
 <img src="./html基础/timg.jpeg" width="50%">
 
 ## 1.html基础
-[html基础知识(./html基础/html基础.md)
+[html基础知识](./html基础/html基础.md)
