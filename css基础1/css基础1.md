@@ -301,7 +301,36 @@ color: rgba(255, 0, 0, 0.5);
 
 >结构：选择器+空格+选择器{属性：值;}
 ```HTML
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen" type="text/css">
+        .box{
+          font-size:40px;
+          color:#16add4;
+        }
+        div span{
+          font-size:400px;
+        }
+        .box span{
+          background-color:rgb(207, 76, 30);
+        }
+        .box .miss{
+          color:rgb(67, 5, 237);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p><span class="miss">前端学习</span></p>
+    </div>
+    <div class="box">
+      <span>自学前端</span>
+    </div>
+  </body>
+</html>
 ```
 
 **特点：**
@@ -313,12 +342,93 @@ color: rgba(255, 0, 0, 0.5);
 
 >结构：选择器>选择器{属性:值;}
 ```HTML
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen" type="text/css">
+        div>span{
+          font-size:40px;
+          color:red;
+        }
+        p>span{
+          font-size:100px;
+          Color:green;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p><span>前端学习</span></p>
+      <span>前端学习</span>
+    </div>
+  </body>
+</html>
 
 ```
 
 #### ◆并集选择器
 >结构：
 选择器+，+选择器+，选择器{属性:值;}
-```HTML
 
+```HTML
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen" type="text/css">
+      .box,#miss,span,h1{
+        font-size:100px;
+        color:#fff;
+        background-color:green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">前端</div>
+    <p id="miss">学习前端</p>
+    <span>自学前端</span>
+    <h1>哈哈</h1>
+  </body>
+</html>
 ```
+### 3.3 文本元素
+#### 属性：
+- font-size:16px;  文字大小
+- Font-weight: 700	;   值从100-900，文字粗细，不推荐使用font-weight:bold;
+- Font-family:微软雅黑;  文本的字体
+- Font-style: normal | italic;      normal 默认值  italic  斜体
+- line-height: 行高
+
+| 属性    | 值     |作用|
+| :------------- | :------------- |:------------- |
+|Text-align|	Center,left,right	|文字居中格式|
+|Font-size	|18px	|设置文字大小|
+|Font-family|	微软雅黑,宋体|	设置字体|
+|Font-weight	|Normal默认，bold粗体，100px|设置字体加粗|
+|Font-style	|Normal默认，italic斜体|	设置字体风格|
+|Color|	颜色|	设置文字颜色|
+
+字体表：
+|字体名称|英文名称|	Unicode 编码|
+|:---:|:---:|:---|
+|宋体|	SimSun|	\5B8B\4F53|
+|新宋体|	NSimSun	|\65B0\5B8B\4F53|
+|黑体	|SimHei|	\9ED1\4F53|
+|微软雅黑 |microsoft yahei|	\5FAE\8F6F\96C5\9ED1|
+|楷体_GB2312|	KaiTi_GB2312|	\6977\4F53_GB2312|
+|隶书|	LiSu|	\96B6\4E66|
+|幼园|	YouYuan	|\5E7C\5706|
+|华文细黑|	STXihei	|\534E\6587\7EC6\9ED1|
+|细明体|	MingLiU	|\7EC6\660E\4F53|
+|新细明体|	PMingLiU|	\65B0\7EC6\660E\4F53|
+
+#### 文本属性连写
+>结构1：
+font: font-style font-weight  font-size/line-height  font-family;
+
+**注意：**
+- font:后边写属性的值。一定按照书写顺序。
+- 文本属性连写文字大小和字体为必写项。
+>结构2:
+Font:italic 700 16px/40px  微软雅黑;
