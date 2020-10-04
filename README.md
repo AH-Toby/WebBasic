@@ -2,7 +2,7 @@
 
 
 
-![title](/Users/toby/Documents/WebBasic/src/title.jpeg)
+![title](./src/title.jpeg)
 
 ## 一.HTML基础
 
