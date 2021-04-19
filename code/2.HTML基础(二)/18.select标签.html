@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="mail">邮箱</label>
+        <!-- 
+            size：设置默认显示条数
+            multiple:设置多选
+         -->
+        <select id="mail" size="7" multiple>
+            <option>@163.com</option>
+            <option>@127.com</option>
+            <option selected>@126.com</option>
+            <option>@125.com</option>
+            <option>@124.com</option>
+            <option selected>@122.com</option>
+            <option>@qq.com</option>
+            <option>@sina.com</option>
+            <option>@sohu.com</option>
+        </select>
+
+        <label for="group">分组</label>
+        <select id="group">
+            <optgroup label="邮箱"> 
+                <option>@163.com</option>
+                <option>@127.com</option>
+                <option>@126.com</option>
+                <option>@125.com</option>
+                <option>@124.com</option>
+                <option>@122.com</option>
+                <option>@qq.com</option>
+                <option selected>@sina.com</option>
+                <option>@sohu.com</option>
+            </optgroup>
+            <optgroup label="登录方式"> 
+                <option>支付宝登录</option>
+                <option>qq登录</option>
+                <option>微信登录</option>
+                <option>网易云登录</option>
+                <option>github登录</option>
+                <option>手机号登录</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>
