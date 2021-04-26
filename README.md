@@ -2,6 +2,28 @@
 
 ![title](./src/title.jpeg)
 
+## 开发工具
+
+VSCODE
+
+快捷键：
+
++：标签并列关系 div+span
+
+\*：创建多个 div*5
+
+:：给input元素设置类型
+
+{}：设置内容
+
+()：对内部内容，统一添加功能 (tr>td*3)*3
+
+[]：设置熟悉 div[id=demo class=xxx]
+
+$：设置起始数字 div{$}*5
+
+@：设置$符号起始数字 div{$@5}*5
+
 ## 一.HTML基础
 
 [1.HTML基础](./book/1.html基础.md)
