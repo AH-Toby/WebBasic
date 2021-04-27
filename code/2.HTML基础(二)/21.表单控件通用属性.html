@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="get" target="_blank">
+        <label for="username">账号：</label>
+        <input type="text" name="u_name" id="username" autofocus required placeholder="请输入账户名">
+        <hr>
+        <label for="password">密码：</label>
+        <input type="password" name="u_pasw" id="password" autofocus required minlength="6" maxlength="15" placeholder="请输入密码">
+        <hr>
+        <label for="info">描述信息：</label>
+        <textarea name="" id="info" cols="30" rows="10" name="infomation" autofocus readonly> 这是描述信息</textarea>
+        <hr>
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>
