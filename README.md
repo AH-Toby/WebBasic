@@ -26,7 +26,9 @@ $：设置起始数字 div{$}*5
 
 ## 一.HTML基础
 
-[1.HTML基础](./book/1.html基础.md)
+[1.HTML基础(一)](./book/1.html基础(一).md)
+
+[2.HTML基础(二)](./book/2.html基础(二).md)
 
 ## 二.CSS基础
 
