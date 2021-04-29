@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        div strong {
+            color: red;
+            font-size: 50px;
+        }
+        div div p {
+            color: green;
+            font-size: 30px;
+        }
+        /* 更加精确的选择*/
+        div div div span strong {
+            color: blue;
+            font-size: 60px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div>
+                <span>
+                    <strong>123</strong>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>1234</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>
+                <strong>1235</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
