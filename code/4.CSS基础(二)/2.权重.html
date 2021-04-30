@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 比较数量 */
+        /* div span strong {
+            color: red;
+        }
+        div strong {
+            color: blue;
+        } */
+        
+        /* 比较标签 */
+        /* div span strong {
+            color: red;
+        }
+        .title strong {
+            color: blue;
+        } */
+
+        /* 权重交大 */
+        #top strong{
+            color: pink;
+        }
+        /* 相同比较距离 */
+        .title span strong {
+            color: blue;
+        } 
+        div .title strong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div>
+            <div class="title">
+                <span>
+                    <strong>1234</strong>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
