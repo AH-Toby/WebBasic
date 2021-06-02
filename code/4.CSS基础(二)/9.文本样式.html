@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 文字修饰 */
+        a {
+            /* 修饰下划线 */
+            /* 去除下划线 */
+            text-decoration: none;  
+            /* 删除线 */
+            /* text-decoration: line-through;  */
+            /* 上划线 */
+            /* text-decoration: overline; */
+            /* 下划线 */
+            /* text-decoration: underline;  */
+        }
+
+        /* 字符缩进 */
+        .font_align {
+            /* 首行缩进2字符 */
+            text-indent: 2em;
+            width: 200px;
+            border: red solid 1px;
+        }
+        
+        img {
+            width:  250px;
+            height: 200px;
+        }
+
+        /* 对齐方式 */
+        .font_align {
+            /* 左对齐 */
+            /* text-align: left; */
+            /* 居中对齐 */
+            /* text-align: center; */
+            /* 右对齐 */
+            /* text-align: right; */
+            /* 分散对齐 */
+            text-align: justify;
+        }
+
+        /* 设置字符间距 */
+        .font-space {
+            letter-spacing: 10px;
+        }
+        
+        /* 设置单词间距 */
+        .word-space {
+            word-spacing: 50px;
+        }
+
+        /* 设置同一行内内级元素对齐方式 */
+        #contents_align img {
+            /* 基础线对齐 */
+            /* vertical-align: baseline; */
+            /* 居中对齐 */
+            /* vertical-align: middle; */
+            /* 居上对齐 */
+            /* vertical-align: top; */
+            /* 居下对齐 */
+            /* vertical-align: bottom; */
+            /* 据具体数量对齐 */
+            vertical-align: 10px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <p class="font_align">这是用来测试首行缩进的示例语句</p>
+    <h1 class="font-space">English</h1>
+    <h2 class="font-space">中文汉语</h2>
+    <h3 class="word-space">English Words</h3>
+    <h4 class="word-space">中文 汉语</h4>
+    <p id="contents_align">这是同一个块元素内容<img src="./img/dog.png" alt="狗"></p>
+</body>
+</html>
