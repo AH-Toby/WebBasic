@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box1,
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        /* 当同级盒子设置上下外边距时，会产生塌陷情况，最后保留值大的那个 */
+        .box1 {
+            margin-bottom: 100px;
+        }
+         .box2 {
+             margin-top: 200px;
+         }
+
+         /* 父子margin级关系 */
+        .father {
+            height: 200px;
+            background: green;
+            margin-top: 150px;
+            /* 当父元素也设置了上边距 那么子元素和父元素之间谁的值大外边距就是多少*/
+        }
+        .son {
+            height: 100px;
+            background: powderblue;
+            margin-left: 50px;
+            margin-top: 50px;
+            /* 子元素设置的上外边距会传递到父元素 */
+        }
+
+        /* 三代margin关系 */
+        .contaiter1 {
+            height: 300px;
+            background: green;
+            margin-top: 50px;
+        }
+        .contaiter2 {
+            height: 200px;
+            background:powderblue;
+            margin-left: 50px;
+            /* 当最内层设置了上外边距外层也设置上外边距，那个值大就是哪个 */
+            margin-top: 100px;
+        }
+        .contaiter3 {
+            height: 100px;
+            background: gold;
+            margin-left: 50px;
+            margin-top: 50px;
+            /* 最内层元素设置的上外边距会传递到最外层元素 */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- 三代关系 -->
+    <div class="contaiter1">
+        <div class="contaiter2">
+            <div class="contaiter3"></div>
+        </div>
+    </div>
+
+    <!-- 父子级关系 -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    
+    <!-- 同级关系 -->
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+
+</body>
+</html>
