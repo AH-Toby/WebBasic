@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 800px;
+            background:pink;
+        }
+        /* 在不设置宽度的情况下会铺满父级元素 */
+        .box1 {
+            height: 100px;
+            background:green;
+        }
+        /* 设置了宽高，那么容器范围为设置宽高的大小（但是还是具有换行效果） */
+        .box2 {
+            height: 100px;
+            width: 200px;
+            background:orange;
+        }
+        .box3 {
+            height: 100px;
+            /* 行内元素转块元素 */
+            display: block;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">box1</div>
+        <span class="box3">box3</span>
+        <span class="box4">box4</span>
+        <div class="box2">box2</div>
+    </div>
+</body>
+</html>

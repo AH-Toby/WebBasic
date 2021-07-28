@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 800px;
+            background: pink;
+        }
+        .box1 {
+            /* 设置宽高无意义 */
+            width: 100px;
+            height: 200px;
+            background: gold;
+        }
+        .box2 {
+            margin: 100px;
+            padding: 100px;
+            background: green;
+        }
+        .box3 {
+            background: skyblue;
+        }
+        .box4 {
+            /* 非行内元素转行内元素 */
+            display: inline;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="box1">box1- 1 -1</span>
+        <span class="box2">box2- 2 -2</span>
+        <span class="box3">box3- 3 -3</span>
+        <div class="box4">box4 - 4 -4</div>
+    </div>
+</body>
+</html>
