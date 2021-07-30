@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 单行文本居中 */
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* 水平居中 */
+            text-align: center;
+            /* 垂直居中 */
+            line-height: 200px;  /* 让行高与高度一致*/
+        }
+        /* 多行文本居中 */
+        .box1 {
+            width: 200px;
+            border: 1px solid black;
+            /* 不设置高度 */
+            /* 水平居中 */
+            text-align: center;
+            /* 垂直居中 */
+            padding: 50px 0px;
+        }
+        /* 盒子行内元素居中 */
+        .container1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* 水平居中 */
+            text-align: center;
+            /* 垂直居中 */
+            line-height: 200px;
+        }
+        /* 盒子块元素居中,高度已知 */
+        .container2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background: green;
+            text-align: center;
+            line-height: 50px;           
+            /* 水平居中 */
+            margin: 0px auto;
+            /* 垂直居中 */
+            /* 如果父盒子高度已知,设置margin-top 但是不要塌陷 */
+            margin-top: 75px;
+            
+        }
+        /* 盒子块元素居中,高度未知 */
+        .container3 {
+            width: 200px;
+            border: 1px solid black;
+            /* 如果父盒子高度未知,设置父盒子padding居中 */
+            padding: 75px 0px 75px 0px;
+        }
+        .box3 {
+            width: 50px;
+            height: 50px;
+            background: green;
+            text-align: center;
+            line-height: 50px;           
+            /* 水平居中 */
+            margin: 0px auto;
+        }
+        /* 盒子行内块元素居中 */
+        .container4 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;;
+            text-align: center;
+            line-height: 200px;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            /* 注意垂直居中的时候要更改图片的对齐方式 */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        hello word!
+    </div>
+    <div class="box1">
+        hello word!
+        <br>
+        hello word!
+        <br>
+        hello word!
+        <br>
+        hello word!
+    </div>
+    <div class="container1">
+        <span>行内元素</span>
+        <!-- <div class="box2">块元素</div>
+        <img src="./img/dog.png" alt=""> -->
+    </div>
+    <div class="container2">
+        <div class="box2">块元素</div>
+    </div>
+    <div class="container3">
+        <div class="box3">块元素</div>
+    </div>
+    <div class="container4">
+        <img src="./img/dog.png" alt="">
+    </div>
+</body>
+</html>

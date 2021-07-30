@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: table-cell;  /*变成表格*/
+            /* 水平居中 */
+            text-align: center;
+            /* 垂直居中 */
+            vertical-align: middle;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 表格的居中 -->
+    <table border="1" width="200" height="200">
+        <tr>
+            <td align="center">表格居中</td>
+        </tr>
+    </table>
+    <!-- 借助表格特性实现的 -->
+    <div class="container">
+        <div>hello</div>
+        <div>hello <br> hello </div>
+        <span>hello</span>
+        <img src="./img/dog.png" alt="" width="20" height="20">
+    </div>
+</body>
+</html>
