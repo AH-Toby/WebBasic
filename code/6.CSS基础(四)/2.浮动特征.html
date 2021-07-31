@@ -5,8 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        .container {
+            margin: 10px auto;
+            width: 800px;
+            background-color: green;
+        }
+        .container div {
+            /* width: 100px; */
+            height: 100px;
+        }
+        /* 浮动可以使元素从左到右紧密排列 */
+        /* 元素设置浮动后，原有的自适应占父元素的百分之百宽度变为包裹内容的宽度； */
+        .box1{
+            background: red;
+            /* 左浮动 */
+            float: left;
+            margin: 50px;
+            margin-bottom: 100px;
+        }
+        /* 不存在上下外边距合并问题 */
+        /* 浮动元素脱离了标准文档流不再占用原有位置 */
+        .box2 {
+            background: orange;
+            /* 左浮动 */
+            float: left;
+            /* 可以设置宽高，margin， padding生效，但是没有换行符 */
+            margin: 50px;
+            margin-bottom: 100px;
+        }
+        .box3 {
+            background: yellow;
+            /* 左浮动 */
+            float: left;
+            margin: 50px;
+            margin-bottom: 100px;  
+        }
+        .box4 {
+            background: rgb(71, 94, 71);
+            /* 左浮动 */
+            /* float: left; */
+            /* 清除浮动 */
+            clear: both;
+        }
+        .box5 {
+            background: paleturquoise;
+            /* 左浮动 */
+            /* float: left; */
+        }
+        .box6 {
+            background: blue;
+            /* 左浮动 */
+            /* float: left; */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="box1">box1-1-1</div>
+        <div class="box2">box2-2-2</div>
+        <div class="box3">box3-3-3</div>
+        <div class="box1">box1-1-1</div>
+        <div class="box2">box2-2-2</div>
+        <div class="box3">box3-3-3</div>
+        <div class="box1">box1-1-1</div>
+        <div class="box2">box2-2-2</div>
+        <div class="box3">box3-3-3</div>
+        <div class="box1">box1-1-1</div>
+        <div class="box2">box2-2-2</div>
+        <div class="box3">box3-3-3</div>
+        <div class="box4">box4-4-4</div>
+        <div class="box5">box5-5-5</div>
+        <div class="box6">box6-6-6</div>
+    </div>
 </body>
 </html>
