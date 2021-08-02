@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            background: green;
+        }
+        /* 伪类 */
+        /* .inp:focus {
+            color: red;
+        } */
+        /* 伪元素 */
+        /* .box:before {
+            content: "hello";
+            font-size: 50px;
+        } */
+        
+        /* 伪类允许出现在选择器的任何位置，
+        而一个伪元素只能跟在选择器的最后一个简单选择器后面 */
+        /* 鼠标滑过container让input文字变黄色 */
+        .container:hover .inp
+        {
+            color: yellow;
+        }
+        
+        .container .box:before {
+            content: "hello";
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="inp" value="hello">
+        <div class="box">css</div>
+    </div>
+</body>
+</html>
