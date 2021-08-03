@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 800px;
+            background: orange;
+            margin: 10px auto;
+        }
+        .container div{
+            float: left;
+            /* 行内块元素会另起一行 */
+            /* display: inline-block; */
+        }
+        .box1 {
+            width: 100px;
+            height: 600px;
+            background: yellow;
+        }
+        .box2 {
+            /* width: 200px; */
+            /* height: 500px; */
+            /* 依次贴边,有大空隙也不会钻进去 */
+            width: 350px;
+            height: 200px;
+            background: green;
+        }
+        /* 依次贴边 */
+        .box3 {
+            width: 300px;
+            height: 300px;
+            background: pink;
+        }
+        .box4 {
+            width: 300px;
+            height: 100px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>
