@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 没有设置盒子的宽度 */
+        .container {
+            width: 400px;
+            height: 400px;
+            margin: 10px auto;
+            background: orange;
+        }
+        /* 对照组 */
+        .container1 {
+            width: 400px;
+            height: 400px;
+            margin: 10px auto;
+            background: orange;
+        }
+        .box1 {
+            height: 100px;
+            background: green;
+            /* 设置margin正值，盒子宽度减小 */
+            margin-left: 100px;  
+            margin-right: 100px;
+        }
+        .box2 {
+            height: 100px;
+            background: skyblue;
+             /* 设置margin负值，盒子宽度减小 */
+            margin-left: -100px;
+            margin-right: -100px;
+        }
+        /* 盒子宽度固定 */
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* 设置margin正值，盒子向右移动 */
+            margin-left: 100px;
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            /* 设置margin负值，盒子向左移动 */
+            margin-left: -100px;
+        }
+
+        /* 盒子宽度固定 */
+        .box5 {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* 设置margin正值，盒子向左移动 */
+            margin-right: 100px;
+        }
+        .box6 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            /* 设置margin负值，盒子向右移动 */
+            margin-right: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+    </div>
+    <!-- 改变默认的对齐方式align -->
+    <div class="container1" align="right">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box5">box3</div>
+        <div class="box6">box4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            font-size: 50px;
+        }
+        .container {
+            width: 800px;
+            height: 800px;
+            background: orange;
+            margin: 0px auto;
+        }
+        .container div {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .box1 {
+            margin-left: -50px;
+            background: green;
+        }
+        .box2 {
+            /* 向左移动50px */
+            margin-left: -50px;
+            background: pink;
+            opacity: 0.6;
+        }
+        .box3 {
+            margin-left: -50px;
+            background: yellow;
+            opacity: 0.6;
+        }
+        /* 重写参考位置 */
+        .rewrite {
+            height: 100px;
+            background: rgb(180,119,162);
+        }
+        .rewrite div {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container rewrite">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>
