@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 1000px;
+            height: 1000px;
+            padding: 100px;
+            border: 50px dotted orange;
+            margin: 100px;
+            /* 背景图片 */
+            background-image: url("./img/dog.png");
+            background-repeat: no-repeat;
+
+            /* 设置背景位置 */
+            /* 1.数值法 */
+            /* background-position: 100px 100px; */
+            /* 2.特殊变量法 */
+            /* background-position: center center; */
+            /* 3.百分比法 */
+            /* background-position: 50% 50%; */
+            /* 4.单独设置 */
+            background-position-x: center;
+            background-position-y: 0px;
+            
+            /* 固定背景 */
+            /* background-attachment: scroll; */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+</body>
+</html>
