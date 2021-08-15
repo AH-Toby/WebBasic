@@ -1,0 +1,26 @@
+.box {
+    width: 700px;
+    height: 1000px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+h1 {
+    color: red;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+span {
+    color: rgb(170, 170, 203);
+    font: normal bold 12px/50px "楷体";
+    display: block;
+}
+span a:link{
+    color: black;
+}
+div div {
+    text-align: center;
+}
+p {
+    text-indent: 2em;
+    font: normal normal 1em/28px "楷体";
+}
