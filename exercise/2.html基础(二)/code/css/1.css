@@ -1,0 +1,12 @@
+.box {
+    width: 700px;
+    height: 700px;
+    background: #eeeeee;
+}
+span {
+    color: red;
+}
+.email-sub {
+    color: black;
+    font-weight: bolder;
+}
