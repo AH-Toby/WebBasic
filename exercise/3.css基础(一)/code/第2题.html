@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+		/* 权重：1 + 1  但是他作用在标签上了所以该权重最大*/
+        div p {
+			color:red;
+		}
+        /* 权重 100 但是未作用在标签上*/
+		#box {
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+    <div id="box">
+		<p id="para" class="spec">
+			<span>文字</span>
+		</p>
+	</div>
+</body>
+</html>
