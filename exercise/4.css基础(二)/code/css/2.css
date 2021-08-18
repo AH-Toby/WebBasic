@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.box {
+    /*盒子占有宽306px 占有高146px*/
+    width: 304px;
+    height: 144px;
+    font-size: 14px;
+    line-height: 27px;
+    margin: 50px 0px 0px 50px;
+}
+.box ul {
+    padding-left: 14px;
+    padding-top: 4px;
+}
+a {
+    /*a标签 文字颜色和下划线不能从祖先继承  必须单独给a设置*/
+    color: #252525; 
+    text-decoration: none;
+}
+.item1 a {
+    font-weight: bold;
+}
+.box ul li {
+    /*正方形*/
+    list-style: square;
+    color: #C5C5C5;
+}
