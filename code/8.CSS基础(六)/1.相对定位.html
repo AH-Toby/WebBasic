@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            font-size: 50px;
+            color: green;
+            border: 1px solid black;
+        }
+        /* 盒子2脱离文档流,会影响兄弟元素 */
+        /* .box2 {
+            float: left;
+            margin-left: 200px;
+        } */
+        /* 盒子2不脱离文档流,不会影响兄弟元素 */
+        .box2 {
+            position: relative;
+            top: 100px;
+            left: 200px;
+            /* left和top优先级高于bottom和right */
+            bottom: 100px;
+            right: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>
