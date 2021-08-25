@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: pink;
+            position: relative;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            /* 浮动遮盖 */
+            background-color:orange;
+            margin-top: -50px;
+            float: left;
+        }
+        .box3 {
+            background-color: yellow;
+            display: inline-block;
+            position: relative;
+            left: -100px;
+            z-index: 10;
+        }
+        .box4 {
+            background-color: green;
+            position:absolute;
+            left: -50px;
+            top: 150px;
+            /* 设置遮盖顺序 */
+            z-index: 11;
+        }
+        .box5 {
+            background-color: blue;
+            position:fixed;
+            left: 50%;
+            margin-left: -300px;
+            top: 200px;
+            z-index: 9;
+        }
+        /* 拼爹现象 */
+        .container1 {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            position: relative;
+            z-index: 100;
+        }
+        .container2 {
+            width: 400px;
+            height: 400px;
+            background-color:teal;
+            position: relative;
+            z-index: 200;
+        }
+        .box6 {
+            background-color: skyblue;
+            position:relative;
+            left: 400px;
+            top: 350px;
+            z-index: 300px;
+        }
+        .box7 {
+            background-color: blue;
+            position:relative;
+            left: 400px;
+            z-index: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">正常盒子</div>
+        <div class="box box2">浮动盒子</div>
+        <div class="box box3">相对定位盒子</div>
+        <div class="box box4">绝对定位盒子</div>
+        <div class="box box5">固定定位盒子</div>
+    </div>
+    <div class="container1">
+        <div class="box box6"></div>
+    </div>
+    <div class="container2">
+        <div class="box box7"></div>
+    </div>
+</body>
+</html>
