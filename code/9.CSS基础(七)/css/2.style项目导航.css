@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* 导航部分 */
+/* 用于布局 */
+.nav {
+    height: 58px;
+}
+/* 固定容器 */
+.nav .nav-container {
+    background-color: #191D3A;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 58px;
+}
+
+/* 用于居中 */
+.nav .nav-inner{
+    margin: 0 auto;
+    height: 58px;
+    line-height: 58px;
+    width: 1000px;
+    /* background-color: #fff; */
+    opacity: 0.5;
+}
+
+/* logo */
+.nav .nav-logo{
+    width: 225px;
+    height: 45px;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url("../img/logo.png");
+    margin-left: 20px;
+    margin-top: 10px;
+    line-height: 1000px;
+    overflow: hidden;
+}
+
+/* 导航栏内容左浮动 */
+.nav ul {
+    float: left;
+}
+.nav .nav-list li {
+    float: left;
+}
+.nav nav-lang{
+    float: right;
+}
+
+.banner {
+    height: 460px;
+    background-color: green;
+}
+
+
+
+.content {
+    height: 700px;
+    background-color: #FFFFFF;
+}
+
+.footer{
+    height: 191.77px;
+    background-color: #191D3A;
+}
