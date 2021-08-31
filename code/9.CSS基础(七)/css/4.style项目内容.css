@@ -1,0 +1,308 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 导航部分 */
+/* 用于布局 */
+.nav {
+    height: 58px;
+}
+/* 固定容器 */
+.nav .nav-container {
+    background-color: #191D3A;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 58px;
+    z-index: 10;
+}
+
+/* 用于居中 */
+.nav .nav-inner{
+    margin: 0 auto;
+    height: 58px;
+    line-height: 58px;
+    width: 1000px;
+}
+
+/* logo */
+.nav .nav-logo{
+    width: 225px;
+    height: 45px;
+    float: left;
+}
+.nav .nav-logo a{
+    width: 159px;
+    height: 35px; 
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url("../img/logo.png");
+    margin-left: 20px;
+    margin-top: 10px;
+    line-height: 1000px;
+    overflow: hidden;
+}
+
+/* 导航栏内容左浮动 */
+.nav ul {
+    width: 650px;
+    float: left;
+    font: 13.992px "Microsoft YaHei";
+    color: #818496;
+    text-align: center;
+}
+.nav ul li {
+    float: left;
+}
+
+.nav .nav-list .nav-item{
+    width: 85px;
+    height: 58px;
+    line-height: 58px;
+    /* 选中变小手 */
+    cursor: pointer;  
+    border-left: 1px solid #252847;
+    border-right: 1px solid #252847;
+    margin: 0px -1px 0px 0px;
+}
+
+/* 选中效果 */
+.nav .nav-list .choses,
+.nav .nav-list .nav-item:hover{
+    background-color: #252847;
+    color: #E2E4ED;
+}
+
+.nav .nav-list .last-item{
+    width: 100px;
+    height: 34px;
+    color: #ffffff;
+    font: 13.992px "Microsoft YaHei", "simhei";
+    background-color: #38b774;
+    margin: 12px 0px 0px 10px;
+    line-height: 34px;
+    border-radius: 3px;
+}
+
+/* 设置字体 */
+.nav .nav-lang{
+    float: right;
+    width: 80.66px;
+    height: 58px;
+    color: #444866;
+    font: 14px "Hiragino Sans GB", "Microsoft YaHei";
+    line-height: 58px;
+    text-align: right;
+}
+
+.nav .lang-zh{
+    margin-right: 10px;
+    color: #38b774;
+}
+
+/* banner部分 */
+.banner {
+    height: 460px;
+    background: url("../img/probanner4.jpg") no-repeat top;
+    position: relative;
+}
+
+.banner .banner-content{
+    position: absolute;
+    left: 50%;
+    top:67px;
+    margin-left: 42px;
+    font: 12px "Hiragino Sans GB";
+    color: #191D3A;
+}
+
+/* 第一行 */
+.banner .frist-content .title-part{
+    float: left;
+    /* 设置元素不可见 */
+    display: none;
+}
+
+/* 在线游戏按钮 */
+.banner .frist-content .btn{
+    float: left;
+    width: 101px;
+    height: 37px;
+    font-size: 13.992px;
+    background: url("../img/online.png") no-repeat;
+    padding-left: 17px;
+    line-height: 37px;
+    margin-left: 342px;
+    margin-top: 13px;
+}
+/* 文字介绍 */
+.banner .intro{
+    font-size: 13.992px;
+    margin-top: 40px;
+}
+
+/* 下载游戏按钮 */
+.banner .download{
+    font-size: 18px;
+    font-weight: bolder;
+    padding-left: 28px;
+    margin-top: 30px;
+    background: url("../img/download.png") no-repeat 2px 4px;
+}
+
+/* 列表 */
+.banner .list{
+    margin-top: 13px;
+}
+.banner .list li{
+    float: left;
+    font-size: 13.992px;
+    width: 83px;
+    height: 95px;
+    background: #ffffffb3;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 11px;
+    margin-right: 1px;
+}
+
+.banner .list span{
+    display: inline-block;
+    padding: 22px;
+    background: url("../img/pad.png") no-repeat;
+}
+
+.banner .list .item1 span{
+    background-position: 8px -193px;
+}
+
+.banner .list .item2 span{
+    background-position: 8px 8px;
+}
+.banner .list .item3 span{
+    background-position: 8px -93px;
+}
+.banner .list p{
+    margin-top: 13px;
+}
+
+.banner .list .item4{
+    width: 111px;
+    text-align: center;
+    line-height: 106px;
+    vertical-align: middle;
+}
+
+/* 内容区域 */
+.content {
+    height: 700px;
+    margin: 0 auto;
+    width: 1000px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.content .movie-list{
+    margin-top: 50px;
+    margin-right: -42.666666px;
+}
+/* 列表布局公式 */
+/* w = iw *n +(n-1)*m */
+/* 1000 = 218 *4 + (4-1)*m */
+/* m = (1000-128*4)/(4-1) */
+.content .movie-list li{
+    float: left;
+    width: 218px;
+    margin-right: 42.666666px;
+}
+
+.content .movie-list img{
+    width: 218px;
+    height: 128px;
+    /* 防止出现图片和内容间的白边出现 */
+    display: block;
+}
+
+.content .intro{
+    text-align: center;
+}
+
+.content .intro h5{
+    font:bold 13.992px "Hiragino Sans GB";
+    padding: 5px 0px 10px;
+}
+
+.content .intro p{
+    font:12px "Hiragino Sans GB";
+    padding: 0px 0px 10px;
+    color: #38b774;
+}
+
+.content .intro p:after{
+    content: "";
+    width: 4px;
+    height: 8px;
+    background: url("../img/arrow.png") no-repeat;
+    display: inline-block;
+    position: relative;
+    left: 6px;
+}
+
+/* 鼠标划上变色 */
+.content .movie-list li:hover .intro{
+    background-color: #38b774;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content .movie-list li:hover p{
+    color: #fff;
+}
+
+.content .movie-list li:hover p:after{
+    background: url("../img/arrow_hover.png") no-repeat;
+}
+
+/* 横线区域 */
+.content .btn-line {
+    height: 18px;
+    border-top: 1px solid #dbe1e7;
+    margin-top: 38px;
+}
+/* 按钮区域 */
+.content .btns {
+    position: absolute;
+    top: 219.5px;
+    left: 50%;
+    width: 75px;
+    font-size: 0px;
+    text-align: center;
+    margin-left: -43px;
+    padding-left: 14px;
+    background: #fff;
+}
+/* 圆圈 */
+.content .btns span {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-color: #dbe1e7;
+    border-radius: 50%;
+    /* margin-left: 13.992px; */
+    margin-right: 14px;
+}
+
+
+.footer{
+    height: 191.77px;
+    background-color: #191D3A;
+}
