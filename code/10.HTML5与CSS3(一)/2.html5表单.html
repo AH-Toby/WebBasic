@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/demo" method="get" id="demo">
+        <!-- 字段 -->
+        <input type="hidden" name="color" value="red">
+        <!-- 输入框 -->
+        <input type="text" name="color" placeholder="请输入">
+        <!-- placeholder，value区别 -->
+        <!-- 一个是提示信息一个是默认值 -->
+        <input type="text" name="color" value="red">
+
+        <!-- 自动焦点 -->
+        <input type="text" autofocus>
+        <!-- 必填项 -->
+        <input type="text" required>
+        
+        <!-- 智能感应 -->
+        <input type="text" list="list">
+        <datalist id="list">
+            <option>red</option>
+            <option>yellow</option>
+            <option>yellowgreen</option>
+            <option>green</option>
+            <option>blue</option>
+            <option>black</option>
+        </datalist>
+
+        <hr>
+        <!-- 输入框类型 -->
+        <!-- 搜索框 -->
+        <input type="search" name="" id="">
+        <!-- 电话 -->
+        <input type="tel" name="" id="">
+        <!-- url -->
+        <input type="url" name="" id="">
+        <!-- 数字 -->
+        <input type="number" name="" id="">
+        <!-- email -->
+        <input type="email" name="" id="">
+        <!-- 拖拽条 -->
+        <input type="range" name="" id="">
+        <!-- 日期 -->
+        <input type="date" name="" id="">
+        <!-- 周 -->
+        <input type="week" name="" id="">
+        <!-- 颜色 -->
+        <input type="color" name="" id="">
+    </form>
+    <button form="demo">
+        提交
+    </button>
+</body>
+</html>
