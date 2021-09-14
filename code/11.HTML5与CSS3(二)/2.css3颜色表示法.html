@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url("img/渐变图片.png") no-repeat;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        /* 设置透明 */
+        .box1 {
+            background-color: rgba(200,10,50, 0.5);
+        }
+        /* opacity设置透明 */
+        .box2 {
+            background-color: blue;
+            opacity: 0.5;
+        }
+        /* 二者区别 opacity会影响子元素，而rgba不会*/
+        .demo {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <div class="demo">
+        </div>
+    </div>
+    <div class="box box2">
+        <div class="demo"></div>
+    </div>
+</body>
+</html>

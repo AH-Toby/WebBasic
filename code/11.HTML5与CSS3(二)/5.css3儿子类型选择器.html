@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 儿子序列选择器：考虑其他元素 */
+        /* p:first-child {
+            background-color: pink;
+        } */
+        /* 儿子类型选择器：不考虑其他元素 */
+        /* p:first-of-type {
+            background-color: yellowgreen;
+        } */
+
+        /* 同类型第一个 */
+        /* h3:first-of-type {
+            background-color: pink;
+        } */
+        /* 同类型最后一个 */
+        /* h3:last-of-type {
+            background-color:green;
+        } */
+        /* 奇数 */
+        /* h3:nth-of-type(odd) {
+            background: orange;
+        } */
+        /* 偶数 */
+        /* h3:nth-of-type(even) {
+            background: yellow;
+        } */
+        
+        /* 首先找出父容器中同类型的元素，然后再去找 */
+        /* .item:nth-of-type(4n+1) {
+            background-color: pink;
+        } */
+
+        .item:nth-last-of-type(4n+1) {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>div</div>
+        <p class="item">1-1-1</p>
+        <p class="item">2-2-2</p>
+        <p class="item">3-3-3</p>
+        <p class="item">4-4-4</p>
+        <p class="item">5-5-5</p>
+        <p class="item">6-6-6</p>
+        <p class="item">7-7-7</p>
+        <p class="item">8-8-8</p>
+        <p class="item">9-9-9</p>
+        <p class="item">10-10-10</p>
+        <h3 class="item">1-1</h3>
+        <h3 class="item">2-2</h3>
+        <h3 class="item">3-3</h3>
+        <h3 class="item">4-4</h3>
+        <h3 class="item">5-5</h3>
+    </div>
+</body>
+</html>

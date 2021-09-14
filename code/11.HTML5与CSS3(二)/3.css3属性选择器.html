@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img {
+            border: 5px solid green;
+        } */
+        
+        /* 属性存在 */
+        /* img[alt] {
+            border: 5px solid green;
+        } */
+
+        /* 只想hello的被选中 */
+        img[alt="hello"] {
+            border: 5px solid orange;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-left: 20px;
+            border: 5px solid green;
+        }
+        /* 以hello开头 */
+        /* 有条件：完整的单词或以完整单词加-开头 */
+        /* div[class|="hello"] {
+            background-color: pink;
+        } */
+        /* 包含hello */
+        /* 有条件：被选择的值必须是单个单词 */
+        /* div[class~="hello"] {
+            background-color: orange;
+        } */
+        
+        /* 开头匹配 */
+        /* div[class^="hello"] {
+            background-color: yellow;
+        } */
+        /* 结尾匹配 */
+        /* div[class$="hello"] {
+            background-color: skyblue;
+        } */
+        /* 包含匹配 */
+        div[class*="hello"] {
+            background-color:greenyellow;
+        }
+        /* 多条件选择 */
+        div[class*="hello"][data-hello="msg"] {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/byqpai2.jpg" alt="hello">
+    <img src="./img/gamepic10.jpg" alt="word">
+    <img src="./img/gamepic2.jpg" alt="hello">
+    <img src="./img/gamepic9.jpg" alt="">
+    <hr>
+    <div class="hello">1 hello</div>
+    <div class="hello word">2 hello word</div>
+    <div class="word hello">3 word hello</div>
+    <div class="helloword">4 helloword</div>
+    <div class="wordhello">5 wordhello</div>
+    <div class="hello-word">6 hello-word</div>
+    <div class="word-hello">7 word-hello</div>
+    <div class="hello_word">8 hello_word</div>
+    <div class="word_hello">9 word_hello</div>
+    <div class=" word_hello " data-hello="msg">10 word_hello</div>
+</body>
+</html>

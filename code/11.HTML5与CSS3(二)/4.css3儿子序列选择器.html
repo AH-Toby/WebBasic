@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 儿子序列选择器 */
+        /* 选择子元素中第一个 */
+        /* 注意：加入了div后p元素就不是第一个了 */
+        /* p:first-child {
+            background-color: green;
+        } */
+
+        /* h3不是第一个不能被选中 */
+        /* h3:first-child {
+            background: pink;
+        } */
+
+        /* .item:first-child {
+            background-color: orange;
+        } */
+        
+        /* 最后一个元素 */
+        /* .item:last-child {
+            background-color: orange;
+        } */
+        
+        /* 选择偶数 */
+        /* p:nth-child(even) {
+            background-color: pink;
+        } */
+        
+        /* 选择奇数 */
+        /* p:nth-child(odd) {
+            background-color: pink;
+        } */
+
+        /* 直接写序号 */
+        /* p:nth-child(1) {
+            background-color: pink;
+        } */
+
+        /* 公式表示 */
+        /* p:nth-child(4n+1) {
+            background-color: pink;
+        } */
+        /* n是从0开始的 */
+        /* p:nth-child(4n+5) {
+            background-color: pink;
+        } */
+
+        /* 从后开始数,是从所有子元素的最后一个开始的，不属于p元素的不被选中 */
+        p:nth-last-child(4n+1) {
+            background-color: pink;
+        }
+        
+        /* .item:nth-last-child(4n+1) {
+            background-color: green;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <!-- <div>div</div> -->
+        <p class="item">1-1-1</p>
+        <p class="item">2-2-2</p>
+        <p class="item">3-3-3</p>
+        <p class="item">4-4-4</p>
+        <p class="item">5-5-5</p>
+        <p class="item">6-6-6</p>
+        <p class="item">7-7-7</p>
+        <p class="item">8-8-8</p>
+        <p class="item">9-9-9</p>
+        <p class="item">10-10-10</p>
+        <h3 class="item">1-1</h3>
+        <h3 class="item">2-2</h3>
+        <h3 class="item">3-3</h3>
+        <h3 class="item">4-4</h3>
+        <h3 class="item">5-5</h3>
+    </div>
+</body>
+</html>
