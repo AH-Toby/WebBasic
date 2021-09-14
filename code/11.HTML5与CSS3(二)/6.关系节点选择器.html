@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择容器中的儿子p元素 */
+        .container >p {
+            background-color: pink;
+        }
+        /* 后面第一个兄弟 */
+        /* .demo + div {
+            background-color: red;
+        } */
+        /* 仅能选择紧挨着的 */
+        /* .demo + h3 {
+            background-color: red;
+        } */
+        /* .demo + .item {
+            background-color: green;
+        } */
+        /* 后面所有兄弟 */
+        .demo ~ .item {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="item">p-1-1</p>
+        <p class="item">p-2-2</p>
+        <p class="item">p-3-3</p>
+        <p class="item">p-4-4</p>
+        <p class="item">p-5-5</p>
+        <div>
+            <div>
+                <div>
+                    <p class="item">p-inner</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">div-1-1</div>
+        <div class="item demo">div-2-2</div>
+        <div class="item">div-3-3</div>
+        <h3 class="item">h3-1-1</h3>
+        <h3 class="item">h3-2-2</h3>
+        <h3 class="item">h3-3-3</h3>
+    </div>
+</body>
+</html>
