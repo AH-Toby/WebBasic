@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::before {
+            content: "HTML";
+            color: red;
+            font-size: 100px;
+        }
+        h1::after {
+            content: "CSS";
+            color: green;
+            font-size: 100px;
+        }
+        /* 段落 */
+        p {
+            width: 400px;
+            border: 1px solid green;
+        }
+        
+        p::first-letter {
+            color: green;
+            font-size: 100px;
+        }
+        p::first-line {
+            color: orange;
+            font-size: 100px;
+        }
+        /* 选中变色 */
+        p::selection {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Word</h1>
+    <p>
+        css2中伪元素以:开头，css3中伪元素以::开头
+        伪元素表示在标签原有内容之前插入伪元素
+        伪元素有一个content属性(必须书写)，属性值用于书写插入的内容
+        ::before:原有内容前面插入内容，是行内元素
+        ::after:原有内容后面插入内容，是行内元素
+        ::first-letter:第一个字母(汉字)的伪元素
+        ::first-line:第一行伪元素
+        ::selection:鼠标圈选的伪元素
+    </p>
+</body>
+</html>

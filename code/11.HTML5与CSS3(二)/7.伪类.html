@@ -5,8 +5,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 被选中checked伪类 */
+        input:checked {
+            width: 100px;
+            height: 100px;
+            margin-left: 20px;
+        }
+        /* 获取焦点伪类 */
+        input:focus {
+            color: green;
+        }
+        
+        /* 不可用的表单元素伪类 */
+        input:disabled {
+            width: 200px;
+            height: 50px;
+        }
+        /* 可用的表单元素伪类 */
+        input:enabled {
+            border: 5px solid green;
+        }
+        
+        /* 排除伪类*/
+        /* :not(input) {
+            background-color: pink;
+        } */
+
+        /* 选择当前活动的元素伪类 */
+        :target {
+            font-size: 100px;
+            color: red;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
+
+        /* 空节点的伪类 */
+        .box:empty {
+            background-color: pink;
+        }
+
+
+        /* 唯一的儿子元素 */
+        .item:only-child{
+            color: green;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box"></div>
+    <div class="box"> </div>
+    <div class="box">
+
+    </div>
+    <div class="box">     </div>
+    <div class="box">box-1-1</div>
+    <hr>
+    <div>
+        <div class="item">item-1</div>
+    </div>
+    <div>
+        <div class="item">item-1</div>
+        <div class="item">item-2</div>
+        <div class="item">item-3</div>
+    </div>
+    <hr>
+
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+    <input type="text" name="" id="">
+    <input type="text" disabled>
+    <input type="text" enabled>
+    <h3>1-1</h3>
+    <h3>2-2</h3>
+    <h3>3-3</h3>
+    <h3>4-4</h3>
+    <h3>5-5</h3>
+    <h3>6-6</h3>
+    <h3>7-7</h3>
+    <h3>8-8</h3>
+    <h3>9-9</h3>
+    <h3>10-10</h3>
+    <h3>11-11</h3>
+    <h3>12-12</h3>
+    <h3>13-13</h3>
+    <h3>14-14</h3>
+    <h3>15-15</h3>
+    <h3>16-16</h3>
+    <h3>17-17</h3>
+    <h3>18-18</h3>
+    <h3>19-19</h3>
+    <h3>20-20</h3>
+    <h3>21-21</h3>
+    <h3>22-22</h3>
+    <h3>23-23</h3>
+    <h3>24-24</h3>
+    <h3>25-25</h3>
+    <h3>26-26</h3>
+    <h3>27-27</h3>
+    <h3>28-28</h3>
+    <h3 id="demo">29-29</h3>
+    <h3>30-30</h3>
+    <h3>31-31</h3>
+    <h3>32-32</h3>
+    <h3>33-33</h3>
+    <h3>34-34</h3>
+    <h3>35-35</h3>
+    <h3>36-36</h3>
+    <h3>37-37</h3>
+    <h3>38-38</h3>
+    <h3>39-39</h3>
+    <h3>40-40</h3>
+    <h3>41-41</h3>
+    <h3>42-42</h3>
+    <h3>43-43</h3>
+    <h3>44-44</h3>
+    <h3>45-45</h3>
+    <h3>46-46</h3>
+    <h3>47-47</h3>
+    <h3>48-48</h3>
+    <h3>49-49</h3>
+    <h3>50-50</h3>
 </body>
 </html>
