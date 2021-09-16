@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 331px;
+            height: 195px;
+            background-color: pink;
+            border: 1px solid green;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 195px;
+        }
+        img {
+            width: 331px;
+            height: 195px;
+            /* 旋转30° */
+            /* transform: rotate(30deg); */
+
+            /* 逆时针旋转30° */
+            /* transform: rotate(-30deg); */
+
+            /* 缩放 */
+            /* 2:就是放大2倍 */
+            /* transform: scale(2); */
+            /* 缩小 */
+            /* 0.5就是缩小0.5倍 */
+            /* transform: scale(0.5); */
+            
+            /* 斜切 */
+            transform: skew(10deg, 10deg);
+            
+            /* 平移 */
+            /* transform: translate(100px, 50px); */
+
+            /* 连写 */
+            /* transform: rotate(-30deg),scale(0.5), translate(100px, 50px); */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/gamepic10.jpg" alt="">
+    </div>
+</body>
+</html>

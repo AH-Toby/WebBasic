@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 605px;
+            height: 344px;
+            border: 50px dotted green;
+            background-color: pink;
+            background-image:  url("./img/渐变图片.png");
+            margin: 100px auto;
+            padding: 200px;
+            font-size: 100px;
+            color: orange;
+            text-align: center;
+            line-height: 344px;
+            
+            /* 背景起源：第一张图片的位置 */
+            /* 默认值 */
+            /* background-repeat: no-repeat; */
+            /* background-origin: padding-box;   */
+            /* 从border开始绘制 */
+            /* background-origin: border-box */
+            /* 从内容开始绘制 */
+            /* background-origin:content-box; */
+            
+            /* 背景裁切 */
+            /* 背景平铺 */
+            /* background-repeat: repeat; */
+            /* 默认值 */
+            /* background-clip: border-box; */
+            /* 裁剪到边框盒 */
+            /* background-clip: padding-box; */
+            /* 裁剪到内容 */
+            /* background-clip: content-box; */
+
+            /* 背景尺寸 */
+            background-repeat: no-repeat;
+            /* 像素值是其具体大小 */
+            /* background-size: 600px 200px; */
+            /* 百分比 */
+            /* background-size: 180% 50%; */
+            /* 特殊单词法 */
+            /* background-size: cover; */
+            background-size: contain;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">hello</div>
+</body>
+</html>
