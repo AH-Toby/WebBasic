@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 动画展示 */
+        @keyframes donghua {
+            0% {
+                transform: rotateZ(30deg) rotateX(0deg);
+            }
+            10% {
+                transform:rotateZ(30deg) rotateX(90deg)
+            }
+            30% {
+                transform:rotateZ(30deg) rotateX(180deg)
+            }
+            40% {
+                transform:rotateZ(30deg) rotateX(270deg)
+            }
+            50% {
+                transform:rotateZ(30deg) rotateX(360deg)
+            }
+            60% {
+                transform:rotateZ(30deg) rotateY(90deg)
+            }
+            70% {
+                transform:rotateZ(30deg) rotateY(180deg)
+            }
+            80% {
+                transform:rotateZ(30deg) rotateY(270deg)
+            }
+            90% {
+                transform:rotateZ(30deg) rotateY(360deg)
+            }
+            100% {
+                transform:rotateZ(30deg) rotateX(0deg)
+            }
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            /* border: 5px solid #000; */
+            margin: 400px auto;
+            position: relative;
+            
+            /* 设置景深 */
+            /* perspective: 1000px; */
+            transform-style: preserve-3d;
+
+            /* 动画 */
+            transform: rotateZ(30deg) rotateY(30deg);
+            animation: donghua 30s linear 0s forwards;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            font-size: 100px;
+        }
+
+        .box1 {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+
+        .box2 {
+            transform: translateZ(-100px) rotateY(180deg);
+            background-color: orange;
+        }
+
+        .box3 {
+            transform: translateX(-100px) rotateY(-90deg);
+            background-color: green;
+            /* opacity: 0.3; */
+        }
+
+        .box4 {
+            transform: translateX(100px) rotateY(90deg);
+            background-color: skyblue;
+
+        }
+        .box5 {
+            transform: translateY(-100px) rotateX(90deg);
+            background-color: blue;
+        }
+
+        .box6 {
+            transform: translateY(100px) rotateX(-90deg);
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+    </div>
+</body>
+</html>

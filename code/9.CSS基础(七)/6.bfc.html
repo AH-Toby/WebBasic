@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 5px solid green;
+            height: 500px;
+            background-color: pink;
+        }
+        /* 设置上下边距 */
+        .box1,.box2{
+            margin: 50px 0px;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            float: left;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 触发bfc */
+            /* display: inline-block; */
+            /* float: left; */
+            overflow: hidden;
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .container2 {
+            border: 5px solid green;
+            background-color: pink;
+            /* 触发bfc */
+            /* float: left; */
+            /* overflow: hidden; */
+            /* display: inline-block; */
+            position: absolute;
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <!-- bfc计算高度要包括浮动 -->
+    <div class="container2">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 331px;
+            height: 195px;
+            border: 5px solid green;
+            margin: 200px auto;
+            
+            /* 设置3d渲染 */
+            transform-style: preserve-3d;
+            
+            /* 添加景深 */
+            perspective: 1000px;
+            
+        }
+        
+        img {
+            position: absolute;
+            transition: all 2s;
+        }
+
+        .img1 {
+            backface-visibility: hidden;
+        }
+
+        .img2 {
+            transform: rotateX(180deg);
+        }
+
+        .box:hover .img1{
+            transform: rotateX(180deg);
+        }
+
+        .box:hover .img2 {
+            transform: rotateX(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/gamepic10.jpg" alt="" class="img1">
+        <img src="./img/gamepic2.jpg" alt="" class="img2">
+
+    </div>
+</body>
+</html>
