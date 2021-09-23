@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1200px;
+            height: 900px;
+            background-color: pink;
+            border: 1px solid #000;
+            margin: 0 auto;
+            display: flex;
+            /* 多条轴表示多行 */
+            flex-wrap: wrap;
+            
+            /* 多条轴更改交叉轴对齐方式 */
+            /* align-content: flex-end; */
+            /* align-content: flex-start; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            align-content: space-evenly;
+
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 5px solid green;
+            background-color: skyblue;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+        }
+        .box1 {
+            width: 200px;
+            height: 100px;
+        }
+        .box2 {
+            width: 300px;
+            height: 250px;
+        }
+        .box3 {
+            width: 100px;
+            height: 300px;
+        } 
+        .box4 {
+            width: 250px;
+            height: 200px;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+</body>
+</html>
