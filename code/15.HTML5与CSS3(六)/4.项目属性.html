@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+            border: 1px solid #000;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+        }
+        .box {
+            font-size: 50px;
+            height: 100px;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+        }
+        .box1 {
+            width: 300px;
+            background-color: green;
+            /* order调节顺序 */
+            /* order: 3; */
+            /* 不要缩小 */
+            /* flex-shrink: 0; */
+            /* 占据空间 */
+            /* flex-basis: 400px; */
+            /* 简写 */
+            flex: 0 0 400px;
+
+        }
+        .box2 {
+            width: 200px;
+            background-color: skyblue;
+            /* order: 2; */
+            /* 放大 */
+            /* flex-grow: 1; */
+            /* 缩小比例 */
+            /* flex-shrink: 1; */
+            flex: 1 1 auto;
+            /* 居中对齐 */
+            align-self: center;
+        }
+        .box3 {
+            width: 400px;
+            background-color: yellowgreen;
+            /* order: 1; */
+            /* 放大 */
+            /* flex-grow: 1; */
+            /* flex-shrink: 2; */
+            flex: 1 2 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>
