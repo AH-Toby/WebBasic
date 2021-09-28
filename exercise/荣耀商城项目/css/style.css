@@ -528,23 +528,70 @@ a.a-set{
 	font-size: 16px;
 }
 
+/* 页脚部分 */
 footer {
     margin-top: 90px;
     background-color: #fff;   
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-footer .channel-floor{
+footer .channel-floor {
     height: 82px;
-    background-color: pink;
 }
 
-footer .slogon-container{
+footer .channel-floor ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .channel-floor li {
+	width: 270px;
+	height: 40px;
+	margin-top: 22px;
+	line-height: 40px;
+	font-size: 18px;
+	/* background-color: red; */
+}
+
+footer .channel-floor span{
+	display: flex;
+	width: 40px;
+	height: 40px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+
+footer .channel-floor a{
+	display: flex;
+} 
+
+footer .channel-floor li:first-of-type span{
+	background:url("../img/icon01.svg") -74px 0 no-repeat;
+}
+
+footer .channel-floor li:nth-of-type(2) span{
+	background:url("../img/icon01.svg") -154px 0 no-repeat;
+}
+
+footer .channel-floor li:nth-of-type(3) span{
+	background:url("../img/icon01.svg") -194px 0 no-repeat;
+}
+
+footer .channel-floor li:nth-of-type(4) span{
+	background:url("../img/icon01.svg") -114px 0 no-repeat;
+}
+
+
+/* 中间服务层 */
+footer .slogon-container {
     height: 317px;
-    background-color: plum;
+	background-color: plum;
 }
 
-footer .footer-container{
+
+
+footer .footer-container {
     height: 95px;
     background-color: purple;
 }
+
