@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .container {
+            background-color: yellow;
+        }
+        .row div {
+            background-color: pink;
+            height: 50px;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            border: 1px solid green;
+            line-height: 50px;
+            /* 不要设置间距会打乱盒子 */
+            /* 设置盒子之间的间距 */
+            /* margin:0 10px; */
+            /* margin-left: -10px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.定义容器 -->
+    <div class="container">
+        <!-- 定义行 -->
+        <div class="row">
+            <!-- 定义列 lg md sm xs -->
+            <!-- <div class="col-lg-1">col-lg-1</div> -->
+            <!-- <div class="col-md-1">col-md-1</div> -->
+            <!-- <div class="col-sm-1">col-sm-1</div> -->
+            <div class="col-xs-1">1</div>
+            <div class="col-xs-1">2</div>
+            <div class="col-xs-1">3</div>
+            <div class="col-xs-1">4</div>
+            <div class="col-xs-1">5</div>
+            <div class="col-xs-1">6</div>
+            <div class="col-xs-1">7</div>
+            <div class="col-xs-1">8</div>
+            <div class="col-xs-1">9</div>
+            <div class="col-xs-1">10</div>
+            <div class="col-xs-1">11</div>
+            <div class="col-xs-1">12</div>
+            <div class="col-xs-1">13</div>
+            <!-- 占三份的 -->
+            <div class="col-xs-3">14</div>
+            <!-- 与前一个隔一格 -->
+            <div class="col-xs-3 col-xs-offset-1">15</div>
+            <!-- 间隔超过行内所有则换行显示 -->
+            <div class="col-xs-3 col-xs-offset-5">15</div>
+        </div>
+    </div>
+</body>
+</html>
