@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            font-size: 50px;
+        }
+        @media screen and (max-width:1001px) {
+            .box {
+                    color: blue;
+                    background-color: pink;
+                }
+        }
+        @media screen and (min-width:1000px) {
+            .box {
+                color: red;
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 在视口大于1000的时候显示红色字体，绿色背景 -->
+    <!-- 在视口小于等于1000的时候显示蓝色字体，粉色背景 -->
+    <div class="box">hello word</div>
+</body>
+</html>
