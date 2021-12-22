@@ -1,0 +1,37 @@
+.nav {
+    height: 100px;
+    display: flex;
+    /* 统一居中 */
+    align-items: center;
+    background-color: pink;
+}
+
+/* 设置图片 */
+.nav img {
+    width: 171px;
+    height: 59px;
+}
+
+/* 内部列表 */
+.nav .list{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav .list li a{
+    display: inline-block;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: normal;
+}
+
+.nav .list li.choise a,
+.nav .list li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
