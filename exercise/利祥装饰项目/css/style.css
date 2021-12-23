@@ -1,14 +1,22 @@
+html, body{
+    background-color: #f8f3ed;
+}
+
 .nav {
+    background-color: #fff;
+}
+
+.nav .container {
     height: 100px;
     display: flex;
     /* 统一居中 */
     align-items: center;
-    background-color: pink;
 }
 
 /* 设置图片 */
 .nav img {
     width: 171px;
+    /* width: 14.25%; */
     height: 59px;
 }
 
@@ -19,19 +27,230 @@
     justify-content: flex-end;
 }
 
-.nav .list li a{
-    display: inline-block;
+.nav .list li {
     padding: 0 20px;
     height: 60px;
     line-height: 60px;
     font-weight: normal;
 }
 
+.nav .list li.choise,
+.nav .list li:hover{
+    background-color: #000;
+}
+
 .nav .list li.choise a,
-.nav .list li a:hover {
+.nav .list li:hover a{
+    color: #fff;
+}
+
+/* 中等屏幕响应式 */
+@media (min-width:768px) and (max-width:991px) {
+    .nav .list li {
+        padding: 0 10px;
+    }
+}
+
+@media (min-width:600px) and (max-width:767px) {
+        .nav .list li {
+            padding: 0 5px;
+        }
+}
+
+/* 手机模式 */
+@media (max-width:599px) {
+    .nav .container {
+        flex-wrap: wrap;
+        height: 160px;
+        align-items: flex-end;
+    }
+
+    .nav .list {
+        
+        min-width: 412px;
+    }
+    .nav .list li{
+        flex: 1;
+        text-align: center;
+        padding: 0 8px;
+    }
+}
+
+/* banner轮播图 */
+.banner {
+    background: url("../image/banner1.jpg") no-repeat center top;
+    background-size: cover;
+    height: 500px;
+}
+
+/* 关于部分 */
+.about-list {
+    margin-top: 30px;
+}
+
+.about-list .col-lg-4 {
+    display: flex;
+}
+
+.about-list .item{
+    text-align: center;
+    margin: 0 15px;
+    background-color: #fff;
+    padding-bottom: 120px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about-list .item img {
+    width: 100%;
+}
+
+.about-list .item h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 24px;
+}
+
+.about-list .item p {
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about-list .item .more {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border:1px dashed #ccc;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -31px;
+}
+
+
+/* 圆形列表 */
+.circle-list {
+    background: url("../image/bg1.jpg") repeat;
+}
+
+.circle-list .row {
+    text-align: center;
+}
+
+.circle-list .col-lg-3 {
+    height: 291px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.circle-list .row h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* 商品列表 */
+.product-list .title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 50px;
+    text-align: center;
+}
+
+.product-list .item {
+    margin: 0 8px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px #eee;
+}
+
+.product-list .item img {
+    width: 100%;   
+}
+
+.product-list .item p {
+    font-size: 16px;
+    margin: 8px 15px;
+    text-align: center;
+}
+
+/* 新闻动态 */
+.news {
+    margin-bottom: 30px;
+}
+.news .title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 50px;
+    text-align: center;
+}
+
+.news .news-list-r {
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.news .news-list-r .row {
+    margin-bottom: 25px;
+}
+
+.news .news-list-r .col-lg-9 {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.news .news-list-r .row:last-child{
+    margin-bottom: 0px;
+}
+
+.news .news-list-r h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news .news-list-r span {
+    display: inline-block;
+    margin-top: 10px;
+    color: orange;
+}
+
+@media (max-width:991px) {
+    .news .news-list-r {
+        padding-left: 0px;
+        margin-top: 30px;
+    }
+}
+
+.footer {
+    padding: 20px 0 40px;
     background-color: #000;
     color: #fff;
 }
 
+.footer .footer-l .col-lg-10 {
+    padding-top: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
 
+.footer .footer-l p {
+    font-size: 14px;
+    margin-top: 10px;
+}
 
+.footer .footer-r {
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.footer .footer-r p{
+    font-size: 14px;
+    margin-top: 10px;
+}
