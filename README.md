@@ -18,7 +18,7 @@ VSCODE
 
 ()：对内部内容，统一添加功能 (tr>td*3)*3
 
-[]：设置熟悉 div[id=demo class=xxx]
+[]：设置属性 div[id=demo class=xxx]
 
 $：设置起始数字 div{$}*5
 
