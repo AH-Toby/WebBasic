@@ -13,6 +13,10 @@ html {
     font-size: 0.3125vw;
 }
 
+html,body {
+    background-color: #fafafc;
+}
+
 /* app区域 */
 .app {
     display: flex;
@@ -52,6 +56,7 @@ html {
     background: url("../img/pic.jpg") no-repeat center top;
     background-size: cover;
     position: relative;
+    margin-bottom: 42rem;
 }
 
 .banner .search {
@@ -95,10 +100,279 @@ html {
 }
 
 .banner .user span {
-    width: 18rem;
-    height: 18rem;
+    width: 20rem;
+    height: 19rem;
     display: block;
     background: url("../img/icon.png") no-repeat;
     background-size: 104rem 327.5rem;
-    background-position: -59rem -310rem;
+    background-position: -58rem -310rem;
+}
+
+.banner .list {
+    position: absolute;
+    height: 64rem;
+    bottom: -32rem;
+    left: 12rem;
+    right: 12rem;
+    background-color: #fff;
+    border-radius: 10rem;
+    display: flex;
+    text-align: center;
+    font-size: 8rem;
+}
+
+.banner .list li {
+    flex: 1;
+    padding-top: 12rem;
+}
+
+.banner .list li span {
+    display: inline-block;
+    width: 20rem;
+    height: 20rem;
+    background: url("../img/sub.png"), no-repeat;
+    background-size: 20rem 315rem;
+}
+
+.banner .list li:nth-child(1) span {
+    background-position: 0 0;
+}
+
+.banner .list li:nth-child(2) span {
+    background-position: 0 -20rem;
+}
+
+.banner .list li:nth-child(3) span {
+    background-position: 0 -40rem;
+}
+
+.banner .list li:nth-child(4) span {
+    background-position: 0 -60rem;
+}
+
+.banner .list li:nth-child(5) span {
+    background-position: 0 -80rem;
+}
+
+/* 导航部分 */
+.nav {
+    width: 295rem;
+    margin: 0 auto;
+    border-radius: 10rem;
+    /* 强制截取圆角 */
+    overflow: hidden;
+}
+
+.nav .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .nav-item {
+    width: 67rem;
+    height: 55rem;
+    font-size: 14rem;
+    color: #fff;
+    text-align: center;
+    line-height: 55rem;
+    background: url("../img/icon.png") no-repeat;
+    background-size: 104rem 327.5rem;
+    background-position: 1000rem 1000rem;
+}
+
+.nav .nav-item:first-child {
+    width: 91rem;
+    height: 55rem;
+    text-align: left;
+    text-indent: 12rem;
+}
+
+.nav .row:first-child .nav-item:last-child {
+    width: 135rem;
+}
+
+.nav .row:first-child .nav-item {
+    background-color: #fa5b55;
+}
+
+.nav .row:nth-child(2) .nav-item {
+    background-color: #4b91ed;
+}
+
+.nav .row:nth-child(3) .nav-item {
+    background-color: #36c3a8;
+}
+
+.nav .row:nth-child(1) .nav-item:first-child {
+    background-position: 46rem -109rem;
+}
+
+.nav .row:nth-child(2) .nav-item:first-child {
+    background-position: 46rem -275rem;
+}
+
+.nav .row:nth-child(3) .nav-item:first-child {
+    background-position: 46rem -169rem;
+}
+
+/* 菜单部分 */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12rem;
+    text-align: center;
+}
+
+.menu li {
+    width: 20%;
+}
+
+.menu li span  {
+    display: inline-block;
+    width: 20rem;
+    height: 20rem;
+    background: url("../img/sub.png") no-repeat;
+    background-size: 20rem 315rem;
+}
+
+.menu li p{
+    font-size: 11rem;
+    margin: 4rem 0 10rem;
+}
+
+.menu li:nth-child(1) span {
+    background-position: 0 -100rem;
+}
+
+.menu li:nth-child(2) span {
+    background-position: 0 -119rem;
+}
+
+.menu li:nth-child(3) span {
+    background-position: 0 -139rem;
+}
+
+.menu li:nth-child(4) span {
+    background-position: 0 -159rem;
+}
+
+.menu li:nth-child(5) span {
+    background-position: 0 -179rem;
+}
+
+.menu li:nth-child(6) span {
+    background-position: 0 -18rem;
+}
+
+.menu li:nth-child(7) span {
+    background-position: 0 -217rem;
+}
+
+.menu li:nth-child(8) span {
+    background-position: 0 -236rem;
+}
+
+.menu li:nth-child(9) span {
+    background-position: 0 -260rem;
+}
+
+.menu li:nth-child(10) span {
+    background-position: 0 -59rem;
+}
+
+/* 广告部分 */
+.ads {
+    height: 44rem;
+    display: flex;
+    border: 1rem solid #ccc;
+    align-items: center;
+}
+
+.ads .item1 {
+    width:78.5rem;
+    height: 20rem;
+    background: url("../img/un_home_text.png") no-repeat 0 -18rem;
+    background-size: 78.5rem 57.5rem;
+}
+
+.ads .item2 {
+    width:36rem;
+    height: 15rem;
+    background: url("../img/icon-gg@2x.png") no-repeat;
+    background-size: 36rem 15rem;
+    /* 占满整个空间将按钮挤到右边去 */
+    flex: 1;
+}
+
+.ads .item3 {
+    width: 100rem;
+    height: 20rem;
+    color: #fff;
+    border-radius: 20rem;
+    background-image: -webkit-linear-gradient(left,#ff4f66,#ff6ac4);
+    margin-right: 10rem;
+    line-height: 20rem;
+    text-align: center;
+}
+
+.ads-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ads-list img {
+    box-sizing: border-box;
+    width: 50%;
+    border: 1rem solid #ccc;
+    border-right:  1rem solid #ccc;
+}
+
+.ads-list img:nth-child(even) {
+    border-right:none;   
+}
+
+/* 按钮组部分 */
+.btns {
+    display: flex;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.btns li {
+    flex: 1;
+    text-align: center;
+    padding: 10rem;
+}
+
+.btns li span{
+    display: inline-block;
+    width: 17rem;
+    height: 17rem;
+    background: url("../img/icon.png") no-repeat;  
+    background-size: 104rem 327.5rem;
+    margin-bottom: 5rem;
+}
+
+.btns li:nth-child(1) span {
+    background-position: -60rem -154rem;
+}
+
+.btns li:nth-child(2) span {
+    background-position: -60rem -173rem;
+}
+
+.btns li:nth-child(3) span {
+    background-position: -60rem -310rem;
+}
+
+.footer {
+    padding: 10rem 0 20rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer p:first-child {
+    width: 100%;
 }
