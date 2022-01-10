@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数字字面量
+        
+        console.log("-----整数字面量-----")
+        // 整数字面量
+        console.log(11);
+        // 八进制
+        console.log(011);
+        // 如果以0开头的8进制数，如果数字大于7，那么将作为10进制处理
+        console.log(08)
+        // 十六进制
+        console.log(0x11);
+        // 负数
+        console.log(-11);
+
+        // 浮点数字面量
+        console.log("-----浮点数字面量-----")
+        // 有整数位
+        console.log(3.141592654);
+        // 无整数位,注意不要使用
+        console.log(.141592654);
+        // 幂的表示方法
+        console.log(3.141592654e3);
+        console.log(3.141592654e-3)
+        // 负数
+        console.log(-3.141592654);
+        
+        console.log("-----特殊字面量-----")
+        // 特殊值字面量
+        // 无穷数(超过1.7976931348623157e+308)
+        console.log(Infinity);
+        // 正无穷
+        console.log(1/0);
+        // 0
+        console.log(0/1);
+        // -0
+        console.log(0/-1);
+        // 负无穷
+        console.log(-1/0);
+
+        // 非数字
+        console.log(NaN);
+        console.log(+"hello");
+        console.log(0/0);
+    </script>
+</body>
+</html>
