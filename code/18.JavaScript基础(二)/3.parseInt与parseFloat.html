@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parseInt
+        console.log('100', typeof '100');
+        console.log(parseInt('100'), typeof parseInt('100'));
+        
+        // 只能取整
+        console.log(parseInt("123.456"), typeof parseInt("123.456"));
+        // 会保留字母前面的数字
+        console.log(parseInt('123abc456'), typeof parseInt('123abc456'));
+        // 如果字母前没有数字那么就会得到NAN
+        console.log(parseInt('aaa123abc456'), typeof parseInt('aaa123abc456'));
+        // parseInt会保留字母前面或者是小数点前的数字
+        // 幂
+        console.log(parseInt('1.23e4'), typeof parseInt('1.23e4'));
+        
+        // 对数字取整
+        console.log(parseInt(1.23e4),typeof parseInt(1.23e4));
+        
+        // 可以携带进制前缀得到10进制数
+        console.log(parseInt(011));
+        console.log(parseInt(0o11));
+        console.log(parseInt(0O11));
+        console.log(parseInt(0x11));
+        
+        // 第二个参数代表进制
+        console.log(parseInt(11,5));
+        // 如果前面有前缀不需要添加进制
+        console.log(parseInt(011, 6));
+
+
+        // parseFloat
+        // 处理小数
+        console.log(parseFloat('1.23'));
+        console.log(parseFloat('1.23.456'));
+        console.log(parseFloat('1.23abc'));
+        
+        // 数字
+        console.log(parseFloat(1.23));
+        console.log(parseFloat(1.23e4));
+        console.log(parseFloat(1.23e-4));
+        console.log(parseFloat(0x11));
+
+        // +可以将字符串转成数字
+        console.log(+"123", typeof +"123");
+        // 可以包含小数
+        console.log(+"1.23", typeof +"1.23");
+        console.log(+"0x11", typeof +"0x11");
+    </script>
+</body>
+</html>

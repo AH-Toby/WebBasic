@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本数学
+        console.log(2 + 3);
+        console.log(2 - 3);
+        console.log(2 * 3);
+        console.log(2 / 3);
+        // 求余数
+        console.log(5%3);
+        // 负数也可以求余数
+        console.log(-5%3);
+
+        // 浮点数加减法
+        // 精确的度有问题那是因为所有数据都是二进制形式存储的
+        console.log(0.1 + 0.2);
+        console.log((0.1*10+0.2*10)/10);
+
+        // 隐式转换
+        console.log(true + 1);
+        console.log(false + 1);
+        // null
+        console.log(null + 1);
+        // 字符串拼接优先级高于数字加法
+        console.log('123'+123);
+        console.log('123'*2);
+
+        // undefined和NaN都会被当作NaN来处理
+        console.log(undefined+1);
+        console.log(NaN+1);
+        
+        // 非纯数字计算都会得到NaN
+        console.log('abc'*3);
+
+        // Infinity计算还是Infinity
+        console.log(Infinity+1);
+    </script>
+</body>
+</html>
