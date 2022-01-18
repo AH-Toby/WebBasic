@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 水仙花数
+        // 条件：三位数,每一个位数得三次方，他们的和还等于原来的三位数
+        for (var num = 100; num <= 999; num++) {
+            123
+            // 取三位
+            // 个位
+            var  a = num % 10;
+            
+            // 十位
+            var b = parseInt((num %100)/10);
+            
+            // 百位
+            var c = parseInt(num/100);
+            
+            // 条件
+            if ((Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3)) === num) {
+                console.log(num);
+            }
+        }
+    </script>
+</body>
+</html>

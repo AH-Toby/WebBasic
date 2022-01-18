@@ -13,9 +13,57 @@
         for (var i=2; i<=10; i += 2) {
             console.log(i);
         }
+        console.log("=================");
         // 2.可以利用++或--运算符简化对循环变量的修改。
+        // for (var i=1; i <= 5; i += 1) {
+        //     console.log(i);
+        // }
+        // 简化
         for (var i=1; i<=5; i++) {
             console.log(i);
+        }
+
+        // 3.循环变量时全局变量。可以在for循环外定义以及访问。
+        var i = 1;
+        for (; i <= 5; i++) {
+            console.log(i)
+        }
+        console.log("循环结束了", i)
+
+        // 4.循环语句可以一次都不执行
+        // i不满足条件了所以不执行
+        for (i = 10; i <= 5; i++){
+            console.log(i)
+        }
+        console.log("循环结束了", i)
+
+        // 5.循环变量可以使用任何值，但是一般我们习惯i,j,k变量
+        for (var num=1; num<=5; num++) {
+            console.log(num);
+        }
+
+        // 7.for循环可以嵌套其他语句，嵌套if语句。
+        // 打印10以内的偶数
+        for (var i=1; i<=10; i++) {
+            if (i%2==0){
+                console.log("偶数", i);
+            } else {
+                console.log("奇数", i);
+            }
+        }
+
+        // 嵌套for循环9x9乘法表
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                console.log(j + "x" + i + "=" + i*j);
+            }
+            console.log("==========================");
+        }
+        
+        // 循环变量可以在循环外初始化
+        var i = 1;
+        for (; i <= 5; i++) {
+            console.log(i)
         }
     </script>
 </body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 输出一个数的所有约数:
+        // 约数概念：a%b==0,那么a叫做b的倍数，b叫做a的约数或因数
+        // 一个数的约数，最小为1，最大是其本身
+        var num = +prompt("请输入一个数");
+        for (var i = 1; i <= num; i++) {
+            // 穷举思想，将所有条件一一列举出来进行匹配，找到最符合条件的
+            if (num % i == 0) {
+                console.log(num + "约数是：" + i);
+            }
+        }
+
+    </script>
+</body>
+</html>

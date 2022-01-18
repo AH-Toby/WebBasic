@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 打印1-3
+        // for (var i = 1; i<=5; i++) {
+        //     if (i < 4) {
+        //         console.log(i);
+        //     } else {
+        //         break;
+        //     }
+        // }
+        // 游标打断外层循环,当输出8*8=64时中断循环
+        break_flag:for (var i = 1; i <=  9; i++) {
+            for (var j = 1; j <= i; j++) {
+                console.log(j + "x" + i + "=" + i*j);
+                if (i==8 && j == 8) {
+                    break break_flag;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
