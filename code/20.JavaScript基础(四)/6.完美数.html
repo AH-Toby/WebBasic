@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 找1000以内的完美数：(一个数的约数除了它本身外其他约数和还等于这个约数)
+        // 计算约数和
+        function sumNum(num) {
+            var sum = 0;
+            for (var i = 1; i<=num-1; i++) {
+                if (num % i === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        function perfulNum(num) {
+            for (var i = 1; i <= num; i++) {
+                if (sumNum(i)===i) {
+                    console.log(i + "是完美数");
+                }
+            }
+        }
+
+        perfulNum(1000);
+    </script>
+</body>
+</html>

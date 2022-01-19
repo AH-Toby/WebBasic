@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义函数
+        // 形参a,b是没有意义的直到调用的时候
+        function demo(a,b) {
+            console.log(a,b);
+            console.log()
+        }
+        // 此时a,b就有了意义
+        demo(10, "hello");
+        demo("abc", 20);
+        // 多传递参数
+        demo(10,20,30,40);
+        // 少传递参数
+        demo(10);
+
+        // arguments获取参数
+        function demo1() {
+            // arguments获取参数
+            console.log(arguments);
+            // 可以通过[索引值]来获取参数
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+            console.log(arguments[3]);
+        }
+        demo1(10,20,30,40);
+
+        // 定义一个函数如果是字符串
+        function print(val) {
+            if (typeof val === "string") {
+                console.log("字符串：" + val);
+            } else if (typeof val === "number") {
+                console.log("数字：" + val);
+            } else {
+                console.log("其他类型:" + val);
+            }
+        }
+        print(100);
+        print("hello");
+    </script>
+</body>
+</html>

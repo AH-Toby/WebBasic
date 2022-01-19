@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 输出10000以内的质数，模块化编程
+        // 思维过程： 判断是否为质数 -->找到约数的个数
+        function checkNum(num) {
+            for (var i = 2; i < num - 1; i++) {
+                if (num%i==0) {
+                    return false;
+                }
+            }
+            return true
+        }
+        
+        function findNum(num) {
+            for (var i = 1; i <= num; i++) {
+                if (checkNum(i)) {
+                    console.log(i);
+                }
+            }
+        }
+
+        findNum(10000);
+
+        
+    </script>
+</body>
+</html>

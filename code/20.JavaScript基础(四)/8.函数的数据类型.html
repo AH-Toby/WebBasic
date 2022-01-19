@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 简单数据类型
+        var a = 20;
+        var b = a;
+        console.log(a, b);
+        b = 30;
+        console.log(a, b);
+
+
+        var a = function(){
+            console.log("这是一个函数")
+        };
+        var b = a;
+        console.log(a, b)
+        // 引用数据类型的数据可以添加属性，通过点语法
+        // a和b指向同一个数据，修改b,a也会随着变化
+        b.color = "red";
+        console.log('a', a.color)
+        console.log(a, b)
+    </script>
+</body>
+</html>
