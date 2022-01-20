@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局变量
+        var color = "red";
+        console.log("外部访问", color);
+
+        function fn1() {
+            // 局部变量
+            var num = 10;
+            console.log("fn1内", color);
+            console.log("函数内",num);
+            function fn2(){
+                console.log("fn2内", color);
+            }
+            fn2();
+        }
+        
+        // console.log("函数外",num);不能访问
+
+        // 其他的函数
+        function fn3() {
+            // console.log("函数外",num);不能访问
+            console.log("fn3内",color);
+        }
+        fn1();
+        fn3();
+    </script>
+
+    <script>
+        // console.log("函数外",num);不能访问
+        console.log("外部", color);
+    </script>
+
+    <script src="./js/demo.js"></script>
+</body>
+</html>

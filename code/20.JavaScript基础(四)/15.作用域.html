@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 条件语句
+        // if (true) {
+        //     var a = 1;
+        // }
+        // // 循环语句
+        // do {
+        //     var b = 2;
+        // } while(false);
+
+        // for(var c = 3; c < 4; c++) {
+        //     var d = 4;
+        // }
+
+        // // 函数
+        // function demo() {
+        //     var e = 5;
+        // }
+
+        // // 执行函数
+        // demo();
+        // // e是拿不到的
+        // console.log(a, b, c, d);
+        
+        // 全局变量
+        var num = 1;
+        // 定义函数
+        function fn1() {
+            // 查找：按照作用域链一层一层向上寻找
+            // var num = 2;
+            // 定义fn2
+            function fn2() {
+                // 定义fn3
+                // function fn3(num) {
+                //     // 当前作用域中，有了形参变量，就不会向上查找了
+                //     console.log(num)
+                // }
+                function fn3() {
+                    // 当前作用域中，有了形参变量，就不会向上查找了
+                    // num = 4;
+                    console.log(num)
+                    // var num = 4;
+                    // function num(){}
+                }
+                fn3();
+            }
+            fn2();
+        }
+        // 外部获取
+        // 函数和变量一样，函数内部定义的函数只能在函数内部访问
+        // fn3();
+        // 全局函数可以在任何地方访问
+        var num = 5;
+        fn1();
+        var num = 7;
+    </script>
+</body>
+</html>

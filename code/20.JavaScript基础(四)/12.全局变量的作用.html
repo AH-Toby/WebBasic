@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 传递作用
+        // 全局变量
+        var num = 0;
+        // function addNum() {
+        //     num++;
+        //     console.log(num);
+        // }
+        // function deleteNum() {
+        //     num--;
+        //     console.log(num)
+        // }
+
+        // addNum();
+        // addNum();
+        // addNum();
+        // deleteNum();
+        // deleteNum();
+        
+        // 通信作用
+        function demo() {
+            num++;
+            console.log(num);
+        }
+        demo();
+        demo();
+        demo();
+    </script>
+</body>
+</html>

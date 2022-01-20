@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数封闭数据
+        // function demo() {
+        //     // 内部的数据：变量
+        //     var num = 10;
+        //     // 内部的语句
+        //     console.log(num)
+        // }
+        // demo();
+        // 外部不能访问内部的数据
+        // console.log(num)
+
+
+        // // 在函数内部封装一个内部函数,内部函数可以访问外部函数的数据
+        // function demo() {
+        //     // 内部数据：变量
+        //     var num = 10;
+        //     // 定义内部的函数
+        //     function inner() {
+        //         console.log(num);
+        //     }
+        //     // 如果将内部函数，暴露在外边就可以在外部访问内部的数据了
+        //     return inner
+        // }
+        // // 此时demo执行的结果就是外部的inner
+        // var outer = demo();
+        // console.log(outer)
+        // // 通过outer访问内部的数据
+        // outer();
+        // outer();
+
+        function demo() {
+            // 外部环境的数据是可以改变的
+            var num = 10;
+            // 内部函数
+            return function inner() {
+                num++;
+                console.log(num)
+            }
+        }
+        // 获取闭包
+        // var outer = demo();
+        // outer();
+        // outer();
+
+        // 每次执行demo都会得到一个全新的外部环境和内部语句
+        var outer1 = demo();
+        outer1();
+        outer1();
+        outer1();
+
+        var outer2 = demo();
+        outer2();
+        outer2();
+        outer2();
+
+        // 总结
+        // 1.执行一次demo函数，闭包inner函数每次执行，外部的环境可能会变化
+        // 2.多次执行demo函数，闭包inner都会获得一个全新的函数
+        
+
+        // 闭包变量问题
+        function init(x,y) {
+            // 由于在外部不需要直到闭包函数的名字所以可以写成匿名函数
+            return function(y){
+                // x使用外部的y使用内部的
+                console.log(x+y);
+            }
+        }
+        // 注意:闭包函数本身也具有一个作用域,因此于外界产生命名冲突的时候,根据作用域链的原则,会优先使用内部的数据
+
+        var add = init(2,4);
+        add(5);
+        add(6);
+        add(7);
+    </script>
+</body>
+</html>
