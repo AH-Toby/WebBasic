@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5];
+
+        // pop方法:删除末尾成员,返回删除的成员
+        var result = arr.pop();
+        console.log(result, arr)
+
+        // push方法:末尾添加成员,返回数组的长度
+        var arr = [1,2,3,4,5];
+        var result = arr.push(6,7)
+        console.log(result, arr)
+
+        // shift方法:删除开头第一项,返回删除的数据
+        var arr = [1,2,3,4,5];
+        var result = arr.shift();
+        console.log(result, arr)
+
+        // unshift方法:开头添加数据,返回数组长度
+        var arr = [1,2,3,4,5];
+        var result = arr.unshift(0,6);
+        console.log(result, arr)
+        
+    </script>
+</body>
+</html>

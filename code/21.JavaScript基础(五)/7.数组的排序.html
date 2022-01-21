@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 排序
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // 倒序
+        var result = arr.reverse();
+        console.log(arr, result);
+
+        var arr = [1, 3, 5, 4, 2, 1, 6, 9, 2, 0];
+        // 为数组排序
+        var result = arr.sort();
+        console.log(arr, result);
+        
+        // 升序
+        var arr = [1, 3, 5, 4, 2, 1, 6, 9, 2, 0];
+        // 参数可以是比较函数
+        // var result = arr.sort(function(a,b){
+        //     // a表示前一个成员,b表示后一个成员
+        //     if (a<b) {
+        //         return -10;
+        //     }else if (a==b){
+        //         return 0;
+        //     } else {
+        //         return 10;
+        //     }
+        // })
+        var result = arr.sort(function(a,b){return a-b;})
+        // 可以简写
+        console.log(arr, result);
+
+        // 降序
+        var arr = [1, 3, 5, 4, 2, 1, 6, 9, 2, 0];
+        var result = arr.sort(function(a,b){return b-a;})
+        console.log(arr, result);
+
+        // 乱序
+        var arr = [1, 3, 5, 4, 2, 1, 6, 9, 2, 0];
+        var result = arr.sort(function(a,b){return Math.random()>0.5?1:-1;})
+        console.log(arr, result);
+    </script>
+</body>
+</html>

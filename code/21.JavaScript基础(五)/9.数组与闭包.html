@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组存储函数
+        var arr = [];
+        // for循环
+        for (var i = 0; i < 5; i++) {
+            // 存储函数
+            arr[i] = function () {
+                // 打印索引值
+                console.log(i);
+            }
+        }
+        arr[3]();
+        
+        // 希望输出结果是3
+        // 让数组存储闭包函数就可以被访问外部环境
+        for (var i = 0; i < 5; i++) {
+            // 存储函数
+            arr[i] = function (i) {
+                return function () {
+                    // 打印索引值
+                    // 此时访问的就是外部环境的i
+                    console.log(i);
+                }
+            }(i)
+        }
+        arr[3]();
+
+    </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
     <script>
         // 创建数组
         var numArray = [1,2,3];
-        console.log(numArray)
+        console.log(numArray);
 
         // 访问每一个
         console.log(numArray[0]);
@@ -20,6 +20,20 @@
         // 修改数据
         numArray[0] = 100;
         console.log(numArray);
+
+
+        // 查看数组总数;
+        console.log(numArray.length);
+        // 访问最后一个成员
+        console.log(numArray[numArray.length-1]);
+
+        // 通过length为数组设置成员,数组就被拉长
+        numArray[numArray.length] = 100;
+        console.log(numArray);
+        // 无规律拉长数据
+        numArray[10] = 1000;
+        // 保存不同数据类型数据
+        numArray[numArray.length] = "hello";
     </script>
 </body>
 </html>

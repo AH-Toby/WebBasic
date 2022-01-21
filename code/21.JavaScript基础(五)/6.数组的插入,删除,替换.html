@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // 删除操作,删除4,5,6三项
+        var result = arr.splice(4,3);
+        console.log(arr)
+        console.log(result)
+        
+
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // 插入操作,4后面插入10,11,12,13四项
+        // 不能写数组,否则整体插入
+        var result = arr.splice(5,0,10,11,12,13);
+        console.log(arr)
+        console.log(result)
+
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // 替换操作,替换4,5,6三项为10,11,12
+        // 替换的数据也不能放到数组中否则会被当成整体
+        var result = arr.splice(5,3,10,11,12);
+        console.log(arr)
+        console.log(result)
+
+    </script>
+</body>
+</html>
