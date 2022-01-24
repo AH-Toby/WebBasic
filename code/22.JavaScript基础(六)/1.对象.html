@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象
+        // 描述汽车
+        var car = {
+            // 属性:描述特征
+            color : "red",
+            // 方法来定义动作
+            run:function() {
+                console.log("骑车跑起来");
+            }
+        }
+
+        // 获取属性
+        console.log(car.color);
+        console.log(car["color"]);
+
+        // 执行方法
+        car.run();
+        car["run"]();
+
+        // 当属性名用变量表示的时候用[]语法
+        var key = 'color';
+        console.log(car[key])
+
+        // 修改数据
+        car.color = "green";
+        car["pink"] = "green";
+        console.log(car.color);
+
+        // 修改方法
+        car.run = function(){
+            console.log("新方法");
+        }
+        car.run();
+
+        car["run"] = function(){
+            console.log("通过[]修改方法");
+        }
+        car["run"]();
+
+        // 添加新属性
+        car.price = 10000;
+        // console.log(car);
+        
+        // js为对象设计看一个循环语句
+        for (var key in car) {
+            // key代表属性名
+            // car[key]代表属性和方法
+            console.log(key,car[key]);
+        }
+
+        // 删除属性
+        delete car.price;
+        console.log(car)
+
+        // // for 循环和for in循环都可以遍历数组
+        // var color = ["red", "orange", "yellow", "green", "blue"];
+        
+        // for (var i = 0; i < color.length; i++) {
+        //     console.log(color[i], key, typeof i);
+        // }
+
+        // // 同等于
+        // for (var key in color) {
+        //     console.log(color[key], key, typeof key);
+        // }   
+        // 注意:
+        // for 训话便利数组,索引值是数字
+        // for in 循环遍历数组,索引值是字符串
+        // 工作中,常常用for循环遍历数组和类数组,用forin循环遍历对象
+        
+        // typeof只能检测值类型数据类型,不能检测引用类型的数据(可以判断函数)
+        console.log(typeof [])
+        console.log(typeof {})
+        console.log(typeof null)
+        console.log(typeof function () {})
+        // null是一个空对象,没有属性和方法,只是占位
+        var a = null;
+        // null与undefined相似都是只有一个值。
+        console.log(a)
+
+    </script>
+</body>
+</html>

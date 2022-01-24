@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局的this指向window
+        console.log(window);
+        console.log(this);
+        // 全局定义的变量,方法都会挂载在window上
+        var color = "red";
+        function demo() {
+            // 全局定义的函数,this也指向window
+            console.log('demo',this);
+        }
+        console.log(window.color)
+        window.demo();
+        demo();
+
+        // 对象中的方法
+        var obj = {
+            msg:"hello",
+            getMsg:function getMsg() {
+                // this指向调用者
+                console.log(this,this.msg)
+            }
+        }
+        obj.getMsg();
+
+    </script>
+</body>
+</html>
