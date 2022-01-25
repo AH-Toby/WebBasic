@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 边界
+        var str = "abchello\nhelloabc\nabchello\nhelloabc";
+        console.log(str);
+        // 开头的abc替换成defg
+        console.log(str.replace(/abc/,"defg"));
+        console.log(str.replace(/abc/g,"defg"));
+        console.log(str.replace(/^abc/mg,"defg"));
+        // 结尾的abc替换成defg
+        console.log(str.replace(/abc$/,"defg"));
+        console.log(str.replace(/abc$/m,"defg"));
+        console.log(str.replace(/abc$/mg,"defg"));
+        
+        // 单词边界
+        var str = "hello word";
+        console.log(str.replace(/\b/g,"--"));
+        console.log(str.replace(/\B/g,"--"));
+
+    </script>
+</body>
+</html>

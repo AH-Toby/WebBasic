@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 匹配abc字母
+        // 精确匹配
+        var reg = /abc/;
+        // abc必须挨在一起
+        console.log(reg.test("abcdefg"));
+        console.log(reg.test("bacdefg"));
+        console.log(reg.test("babcdefg"));
+        console.log(reg.test("bab cdefg"));
+        
+        // 预定义特殊字符
+        var str = "abc\ndef\rg";
+        console.log(/\n/.test(str));
+        console.log(/\r/.test(str));
+
+        // 修饰符
+        var str = "abc\nde\nf\ng";
+        // 将\n换成111
+        // 全局匹配
+        console.log(str.replace(/\n/g,111))
+        
+        // 忽略大小写
+        var str = "abcdefG";
+        console.log(str.replace(/g/i,111))
+    </script>
+</body>
+</html>

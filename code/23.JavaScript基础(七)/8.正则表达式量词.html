@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 手机号 11位数字
+        // 1开头
+        var reg = /^1[0-9]{10,11}$/;
+        console.log(reg.test("12345678910"));
+        console.log(reg.test("1234567891011"));
+        // 匹配16位数字
+        var reg = /^[0-9a-f]*$/;
+        console.log(reg.test("g11"));
+        console.log(reg.test("ff"));
+        // 变量规则
+        var reg = /^[a-zA-Z&_][0-9a-zA-Z&_]*$/;
+        console.log(reg.test("TEST"));
+        console.log(reg.test("0TEST"));
+    </script>
+</body>
+</html>

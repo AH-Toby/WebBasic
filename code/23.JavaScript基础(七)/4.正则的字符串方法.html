@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "hello word           abc";
+        // 将单词截取出来
+        console.log(str.split(" "))
+        // 按一个空格或多个空格切割
+        console.log(str.split(/\s+/))
+        // 字符串匹配
+        var str = "hello word abc";
+        console.log(str.match(/word/))
+        // 不区分大小写
+        console.log(str.match(/word/i))
+        // 字符串搜索
+        console.log(str.search(/word/i))
+        // 替换
+        console.log(str.replace(/abc/i, "cde"))
+
+    </script>
+</body>
+</html>

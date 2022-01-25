@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 检测是否位本地电话，前面是3位，后面是8位或者前面4位后面8位
+        var reg = /^[0-9]{3}-[0-9]{8}$|^[0-9]{4}-[0-9]{8}$/;
+        console.log(reg.test("010-02041545"))
+        console.log(reg.test("0100-02041545"))
+        console.log(reg.test("0100-0245545"))
+    </script>
+</body>
+</html>

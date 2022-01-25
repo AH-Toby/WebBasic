@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "hello word!";
+        // 获取长度
+        console.log(str.length);
+        // 通过索引值访问每个字符,从0开始奇数
+        console.log(str[1]);
+        // chartAt获取字符
+        console.log(str.charAt(2));
+        // chartCodeAt获取字符编码
+        console.log(str.charCodeAt(2));
+        // indexOf:寻找子字符串位置
+        console.log(str.indexOf("lo"));
+        // concat:拼接字符串
+        var str2 = "xiexie";
+        console.log(str.concat(str2, 1, "a", "abc", 123))
+        // split字符串转数组
+        console.log(str.split(""))
+        // 转大写
+        console.log(str.toUpperCase())
+        
+        // 定义字符串
+        // 索引值与字符一致
+        var str = "0123456789"
+        // 截取345
+        console.log(str.slice(3,6))
+        console.log(str.substr(3,3))
+        console.log(str.substring(3,6))
+        // 负数
+        console.log(str.slice(-7,-4))
+        console.log(str.substr(-7,3))
+        // console.log(str.substring(3,6))
+    </script>
+</body>
+</html>
