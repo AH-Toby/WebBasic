@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 页面加载完成再执行
+        window.onload = function () {
+            // 绑定事件，监听用户与页面之间的交互
+            var app = document.getElementById("app");
+            var inp = document.getElementById("inp");
+
+            function demo() {
+                console.log("点击了");
+            };
+            // 点击h1元素
+            app.onclick = demo;
+            
+            // 双击
+            app.ondblclick = demo;
+            
+            // 鼠标移出和移出
+            app.onmouseenter = function () {
+                console.log("移入h1");
+            };
+            app.onmouseleave = function () {
+                console.log("移出h1");
+            };
+
+            // 输入框获取焦点、拾取焦点
+            inp.onfocus = function () {
+                console.log("获取焦点");
+            }
+
+            inp.onblur = function () {
+                console.log("失去焦点");
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <h1 id="app" style="color: green;">hello word</h1>
+    <input type="text" id="inp" style="padding: 10px; margin: 10px;">
+    <!-- <script>
+        // 绑定事件，监听用户与页面之间的交互
+        var app = document.getElementById("app");
+        var inp = document.getElementById("inp");
+
+        function demo() {
+            console.log("点击了");
+        };
+        // 点击h1元素
+        app.onclick = demo;
+        
+        // 双击
+        app.ondblclick = demo;
+        
+        // 鼠标移出和移出
+        app.onmouseenter = function () {
+            console.log("移入h1");
+        };
+        app.onmouseleave = function () {
+            console.log("移出h1");
+        };
+
+        // 输入框获取焦点、拾取焦点
+        inp.onfocus = function () {
+            console.log("获取焦点");
+        }
+
+        inp.onblur = function () {
+            console.log("失去焦点");
+        }
+    </script> -->
+</body>
+</html>
+<script>
+    console.log("页面加载完了");
+</script>

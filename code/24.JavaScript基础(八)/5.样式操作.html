@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="app" style="color: green;">hello word</h1>
+    
+    <script>
+        // 点语法修改样式
+        var app = document.getElementById("app");
+        app.style.color = "red";
+        
+        // setAttribute修改样式,会覆盖原有
+        // app.setAttribute("style", "color:black")
+
+        // 新增样式
+        // 属性名如果是单一属性需要改为驼峰命名法
+        app.style.fontSize = "50px";
+    </script>
+</body>
+</html>

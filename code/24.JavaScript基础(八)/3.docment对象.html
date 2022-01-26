@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="app" style="color: green;" class="demo" color="red">hello</h1>
+    <script>
+        // 修改标题
+        document.title = "你好";
+        // 获取标题
+        console.log(document.title);
+        // 获取head标签
+        console.log(document.head);
+        // 获取body标签
+        console.log(document.body)
+        
+
+        // 获取h1元素
+        var app = document.getElementById("app");
+        console.log(app);
+
+        // 获取元素属性
+        console.log(app.id);
+        console.log(app.style);
+        // class要写成className for要写成htmlFor
+
+        console.log(app.className);
+        // 获取不到
+        console.log(app.color);
+
+        // 修改属性
+        app.className = "word"
+        // 增加属性
+        app.title = "hello";
+    </script>
+</body>
+</html>

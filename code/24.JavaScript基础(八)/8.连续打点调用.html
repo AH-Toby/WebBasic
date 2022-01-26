@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="app">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+    </section>
+    
+    <script>   
+        // 获取section元素
+        var app = document.getElementById("app");
+        // 通过app寻找其内部的div元素
+        var divs = app.getElementsByTagName("div");
+        console.log(divs)
+
+        // 批量绑定事件
+        // for (var i = 0; i<divs.length; i++) {
+        //     // 绑定事件
+        //     divs[i].onclick = function () {
+        //         console.log(i);
+        //     }
+        // }
+        // 方案1：IIFE和闭包
+        // for (var i = 0; i<divs.length; i++) {
+        //     // 绑定事件
+        //     divs[i].onclick = (function (a) {
+        //         return function () {
+        //             console.log(a)
+        //         }
+        //     })(i+1)
+        // }
+
+        // 方案2：通过this访问元素自身存储的数据
+        // for (var i = 0; i<divs.length; i++) {
+        //     // 绑定事件
+        //     divs[i].index = i+1;
+        //     divs[i].onclick = function () {
+        //         console.log(this.index)
+        //     }
+        // }
+        // 方案三：通过内容获取编号
+        for (var i = 0; i<divs.length; i++) {
+            // 绑定事件
+            divs[i].onclick = function () {
+                console.log(this.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

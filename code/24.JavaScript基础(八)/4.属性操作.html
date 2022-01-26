@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="demo" color="red" style="color: green;">hello word!</div>
+    <script>
+        // 获取元素
+        // 点语法
+        var app = document.getElementById("app");
+        console.log(app.className);
+        
+        // getAttubute专门获取属性的方法
+        console.log(app.getAttribute("class"));
+        // 获取style
+        console.log(app.style);
+        console.log(app.getAttribute("style"));  // 字符串
+
+        // 获取自定义属性color
+        // 点语法获取不了,其他属性没有区别
+        console.log(app.color);
+        console.log(app.getAttribute("color"));
+
+        // 设置属性
+        app.className = "test";
+        app.setAttribute("class", "test-aaa");
+        // 自定义属性也可以设置
+        app.setAttribute("color", "yellow");
+    </script>
+</body>
+</html>

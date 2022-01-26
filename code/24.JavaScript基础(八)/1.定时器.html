@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 单次定时器
+        // console.log("开始");
+        // // 过两秒打印hello
+        // // 定时器是异步的不会影响后续代码的运行
+        // // setTimeout(function () {console.log("hello")}, 2000);
+
+        // // 传递具名函数+参数
+        // function demo(a) {
+        //     console.log("打印了：" + a)
+        // }
+        // var timebar = setTimeout(demo,1000,1)
+        // // 清空定时器
+        // clearTimeout(timebar);
+        // console.log("结束");
+        
+        // 循环定时器
+        console.log("开始");
+        // setInterval(function () {console.log("hello")}, 1000);
+        // 传递具名函数+参数
+        function demo(a) {
+            console.log("打印了：" + a)
+        }
+        var timebar = setInterval(demo,1000,1);
+        // 清除定时器
+        clearInterval(timebar);
+        console.log("结束");
+    </script>
+</body>
+</html>
