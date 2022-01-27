@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .app {
+            border: 1px solid #000;
+            display: inline-block;
+        }
+        .app .header {
+            line-height: 36px;
+        }
+        .app .header span {
+            padding: 0 10px;
+            font-size: 18px;
+        }
+        .app .header .choose {
+            color: pink;
+        }
+
+        .app .body {
+            height: 150px;
+            padding: 10px;
+        }
+        .app .body p {
+            display: none;
+        }
+        .app .body .choose {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app" class="app">
+        <div class="header">
+            <!-- 默认选中第一个 -->
+            <span class="choose">精选</span>
+            <span>社会</span>
+            <span>娱乐</span>
+            <span>体育</span>
+        </div>
+        <div class="body">
+            <p class="choose">精选新闻</p>
+            <p>社会新闻</p>
+            <p>娱乐新闻</p>
+            <p>体育新闻</p>
+        </div>
+    </div>
+
+    <script>
+        var sp = document.getElementById("app").getElementsByTagName("span");
+        var p = document.getElementById("app").getElementsByTagName("p");
+
+        // 对应与排它思想
+        for (var i = 0, len = sp.length; i < len; i++){
+            // 保存索引值
+            sp[i].index = i;
+
+            // 点击事件
+            sp[i].onclick = function () {
+                for (var j = 0; j < len; j++) {
+                    // 清除样式
+                    // 清除样式
+                    sp[j].className = "";
+                    p[j].className = "";
+                }
+
+            sp[this.index].className = "choose";
+            p[this.index].className = "choose";
+            }
+        }
+        
+    </script>
+</body>
+</html>

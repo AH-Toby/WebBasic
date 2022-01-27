@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app1">
+        <p>item1</p>
+        <p>item2</p>
+        <p>item3</p>
+        <p>item4</p>
+    </div>
+    <hr>
+    <div id="app2">
+        <p>item1</p>
+        <p>item2</p>
+        <p>item3</p>
+        <p>item4</p>
+    </div>
+    <script>
+        // 获取第一张组p标签
+        var p1  = document.getElementById("app1").getElementsByTagName("p");
+        var p2  = document.getElementById("app2").getElementsByTagName("p");
+
+        // 对应思想
+        // for (var i = 0, len = p1.length; i < len; i++){
+        //     // 绑定事件
+        //     // 设置索引值
+        //     p1[i].index = i;
+        //     p1[i].onclick = function() {
+        //         p2[this.index].style.backgroundColor = "pink";
+        //     }
+        // }
+
+        // 排它思想，不管之前选中的是第几个都清除再选中
+        for (var i = 0, len = p1.length; i < len; i++){
+            // 绑定事件
+            // 设置索引值
+            p1[i].index = i;
+            p1[i].onclick = function() {
+                // 其他的都清除
+                for (var j = 0, len_p2 = p2.length; j<len_p2; j++){
+                    // 清除p2中每一个样式
+                    p2[j].style.backgroundColor = "transparent";
+                }
+                // 再设置选中的
+                p2[this.index].style.backgroundColor = "pink";
+            }
+        }
+        
+    </script>
+</body>
+</html>
