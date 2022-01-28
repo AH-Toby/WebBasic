@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            font-size: 40px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="color: red;">
+        hello
+    </div>
+
+    <script>
+        /***
+         * 封装一个getStyle方法,可以在不同浏览器下获取样式
+         * @obj 元素对象
+         * @key 属性名称
+         * return 获取的样式
+         * */
+        function  getStyle(obj, key) {
+            // 能力检测,判断浏览器能力,能做什么就做什么
+            // 浏览器是否支持getComoutedStyle方法
+            // 
+            if (window.getComputedStyle) {
+                // 方法一:
+                return getComputedStyle(obj)[key];
+                // 方法2:需要驼峰命名转杠
+                // key = key.replace(/([A-Z])/g, function (match, $1) {
+                //     return "-" + $1.toLowerCase();
+                // })
+                // return getComputedStyle(obj).getPropertyValue(key);
+
+            } else {
+                var style = obj.currentStyle;
+                // 如果有样式可以获取,没有样式要提示
+                if (style) {
+                    // 返回样式
+                    key = key.replace(/-([a-z])?/g, function (match,$1) {
+                        return $1.toUpperCase();
+                    })
+                    return style.key;
+                } else {
+                    alert("你的浏览器不支持获取计算样式");
+                }
+            }
+        }
+        // 测试
+        var app = document.getElementById("app");
+        console.log(getStyle(app, "color"))
+        console.log(getStyle(app, "width"))
+        console.log(getStyle(app, "height"))
+        console.log(getStyle(app, "background-color"))
+        console.log(getStyle(app, "backgroundColor"))
+        console.log(getStyle(app, "font-size"))
+        console.log(getStyle(app, "fontSize"))
+    </script>
+</body>
+</html>

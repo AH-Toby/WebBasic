@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            font-size: 40px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="color: red;">
+        hello
+    </div>
+    <script>
+        // 获取元素
+        var app = document.getElementById("app");
+        // 获取样式,只能获取行内设置的样式，获取不到css样式
+        console.log(app.style.color);
+        // console.log(app.style.width);
+        // console.log(app.style.height);
+        // console.log(app.style.fontSize);
+        // console.log(app.style.backgroundColor);
+        // 通过getComputedStyle方法获取计算后的样式
+        var result = getComputedStyle(app);
+        console.log(result.getPropertyValue("width"));
+        console.log(result.getPropertyValue("height"));
+        console.log(result.getPropertyValue("color"));
+        // getPropertyValue，不能使用驼峰式命名
+        console.log(result.getPropertyValue("background-color"));
+        // console.log(result.getPropertyValue("backgroundColor"));
+        // 还可以使用[]语法获取,可以使用驼峰式命名
+        console.log("============================================");
+        console.log(result["width"]);
+        console.log(result["height"]);
+        console.log(result["color"]);
+        console.log(result["background-color"]);
+        console.log(result["backgroundColor"]);
+
+        // 低版本ie浏览器获取浏览器样式用：currentStyle方法
+        console.log("============================================");
+        var result = app.currentStyle;
+        // 只能使用驼峰命名不能使用横线
+        alert(result)
+        alert(result.color)
+        alert(result.fontSize)
+        alert(result.backgroundColor)
+
+
+    </script>
+</body>
+</html>
