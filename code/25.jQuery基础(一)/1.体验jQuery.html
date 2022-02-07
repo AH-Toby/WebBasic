@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div></div>
+    <!-- 给div中添加内容hello word!,字号50px, 颜色red -->
+    <!-- 1.使用源生js -->
+    <!-- <script>
+        var divs = document.getElementsByTagName("div");
+        console.log(divs);
+        // 设置内容
+        divs[0].innerHTML = "hello word!";
+        // 设置样式
+        divs[0].style.fontSize = "50px";
+        divs[0].style.color = "red";
+    </script> -->
+
+    <!-- 2.使用jQuery -->
+    <!-- 引入jQuery -->
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        var div = $("div");
+        console.log(div)
+        // 设置内容
+        div.html("hello word").css({
+            color:"red",
+            // 单位会自动适配
+            fontSize:50,
+        }
+        )
+        // div.html = "hello word!"
+    </script>
 </body>
 </html>
