@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            color: red;
+            border-top: 5px dotted red;
+            margin-top: 10px;
+            height: 80px;
+        }
+        div:first-child {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 获取元素
+        var divs = $("div");
+        // size方法
+        console.log(divs.length);
+        console.log(divs.size());
+
+        // 设置样式
+        // 1.设置单个属性
+        divs.css('font-size', "50px");
+        divs.css('borderBottom', "1px solid green");
+        // 2.设置多个属性
+        divs.css({
+            "background-color":"pink",
+            "width":400,
+        });
+        
+        // 获取元素样式
+        console.log(divs.css("color"));
+        console.log(divs.css("margin-top"));
+        console.log(divs.css("marginTop"));
+
+        // 属性计算，要转成number类型
+        console.log(parseInt(divs.css("height"))+20);
+
+        // 绑定事件
+        // divs.on('click',function () {
+        //     // this指向当前元素
+        //     console.log(this)
+
+        //     // alert("点击事件");
+        //     // this转jquery对象
+            
+        //     $(this).css("color","black")
+        // });
+
+        // 事件简写
+        divs.click(function () {
+            // this指向当前元素
+            $(this).css("color","yellow")
+        })
+    </script>
+</body>
+</html>

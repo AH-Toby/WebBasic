@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <h1>hello</h1>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p class="demo">4</p>
+    <h2 class="demo"></h2>
+    <div id="app"></div>
+    <div color="red"></div>
+    <!-- 引入jQuery -->
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 通过$方法获取div
+        var div = $("div");
+        // div.html("hello word")
+        // console.log(div);
+
+        // 我们一定要区分开js方法和jQuery方法
+        // jQuery对象只能使用jQuery方法
+        // js对象只能使用js方法
+        
+        // jq对象转js对象
+        // jQuery对象是类数组，通过下标可以获取js对象
+        div[0].innerHTML = "hello";
+        console.log(div[0]);
+        // jQuery支持css2.1以及css3的选择器
+        console.log($('div'));
+        console.log($('#app'));
+        console.log($('.demo'));
+        // 组合形式
+        console.log($('h2.demo'));
+        
+        // css3选择器
+        console.log($("[color=red]"));
+        console.log($("p:first"));
+        console.log($("p:last"));
+        console.log($("p:even"));
+
+        // 二次筛选
+        console.log($("p").eq(2))
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 300px;
+            background-color: pink;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div class="box"></div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        var btns = $("button");
+        var box = $(".box");
+
+        // 点击按钮完成功能
+        btns.on('click', function () {
+            var index = $(this).index();
+            switch (true) {
+                case (index==0):
+                    box.show(1000);
+                    break;
+                
+                case (index==1):
+                    box.hide(1000);
+                    break;
+                
+                case (index==2):
+                    box.toggle(1000);
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
