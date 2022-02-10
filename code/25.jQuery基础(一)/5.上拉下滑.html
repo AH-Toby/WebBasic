@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button>上拉</button>
+    <button>下滑</button>
+    <button>切换</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        var btns = $("button");
+        var div = $(".box");
+        
+        // 点击按钮触发效果
+        btns.on("click",function () {
+            var index = $(this).index();
+            switch (true) {
+                case (index==0):
+                    // 上拉
+                    div.slideUp();
+                    break;
+                    
+                case (index==1):
+                    // 下滑
+                    div.slideDown();
+                    break;
+                
+                case (index==2):
+                    // 切换
+                    div.slideToggle();
+                    break;
+            }
+        })
+
+    </script>
+</body>
+</html>
