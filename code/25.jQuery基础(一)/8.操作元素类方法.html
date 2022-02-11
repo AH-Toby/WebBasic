@@ -16,12 +16,17 @@
             margin-top: 50px;
             background-color: pink;
         }
+
+        .green {
+            color: green;    
+        }
     </style>
 </head>
 <body>
-    <button>获取内容</button>
-    <button>修改内容</button>
-    <button>设置标签内容</button>
+    <button>添加类</button>
+    <button>删除类</button>
+    <button>切换类</button>
+    <button>判断类</button>
     <div class="box">hello word!</div>
     <script src="./js/jquery-1.12.3.js"></script>
     <script>
@@ -33,16 +38,24 @@
             var index = $(this).index();
             switch (true) {
                 case (index==0):
-                    content = box.html();
-                    alert(content)
+                    box.addClass('green')
                     break;
                 
                 case (index==1):
-                    box.html("你好 世界！")
+                    box.removeClass('green')
                     break;
                 
                 case (index==2):
-                    box.html("<h1>标签内容</h1>")
+                    box.toggleClass('green')
+                    break;
+                
+                case (index==3):
+                    var temp = box.hasClass('green');
+                    if (temp === false) {
+                        alert("green类不存在");
+                    } else {
+                        alert("green类存在");
+                    }
                     break;
             }
         })

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p> <strong>hello1</strong></p>
+        <p>hello2</p>
+        <h1 class="title">111</h1>
+        <h2>2222</h2>
+        <p>hello3</p>
+        <p>hello4</p>
+    </div>
+    <div class="box1">
+        <p>hello1</p>
+        <p>hello2</p>
+        <h1>111</h1>
+        <h2>2222</h2>
+        <p>hello3</p>
+        <p>hello4</p>
+    </div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 获取p
+        console.log("界面中有多少p元素", $("p"), $("p").size())
+        
+        // 获取第三个p给他的背景色设置为pink
+        $("p").eq(2).css("backgroundColor","pink");
+        
+        // 获取p元素在兄弟元素中的顺序
+        $("p").click(function () {
+            console.log($(this).index())
+        })
+
+        // each方法
+        // 对每个p进行处理
+        $("p").each(function () {
+            console.log(arguments)
+        })
+    </script>
+</body>
+</html>

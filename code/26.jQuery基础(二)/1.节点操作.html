@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p> <strong>hello1</strong></p>
+        <p>hello2</p>
+        <h1 class="title">111</h1>
+        <h2>2222</h2>
+        <p>hello3</p>
+        <p>hello4</p>
+    </div>
+    <div class="box1">
+        <p>hello1</p>
+        <p>hello2</p>
+        <h1>111</h1>
+        <h2>2222</h2>
+        <p>hello3</p>
+        <p>hello4</p>
+    </div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 点击p获取它的内容
+        $("p").click(function () {
+            console.log("当前内容", $(this).html())
+            // 获取父节点内容
+            console.log("获取父节点", $(this).parent())
+            // 获取所有父节点
+            console.log("获取所有父节点", $(this).parents())
+            // 获取所有兄弟节点
+            console.log("获取所有兄弟节点", $(this).siblings())
+        })
+
+        $("div").click(function () {
+            // 获取所有子节点
+            console.log("所有子节点",$(this).children())
+        })
+        
+        // 兄弟节点，只能获取亲兄弟
+        console.log("获取兄弟节点", $(".title").siblings())
+
+        // 获取h1后面的元素
+        console.log("获取紧跟h1后面的元素", $(".title").next())
+        console.log("获取紧跟h1后面的所有元素", $(".title").nextAll())
+        
+        // 获取h1前面的元素
+        console.log("获取紧跟h1前面的元素", $(".title").prev())
+        console.log("获取紧跟h1前面所有的元素", $(".title").prevAll())
+
+        // 获取h1的祖先节点
+        console.log("获取h1的祖先节点元素", $(".title").parents())
+
+        // 查找后代子节点
+        console.log("查找节点内部后代子节点", $(".box").find("strong"))
+        // 当前实在strong内，继续查找的化就到strong中查找了所以查找不到h1
+        console.log($(".box").find("strong").find("h1"))
+        // end方法可以上一层
+        console.log($(".box").find("strong").end().find("h1"))
+    </script>
+</body>
+</html>

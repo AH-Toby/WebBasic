@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .box1 {
+            background-color: pink;
+        }
+        .box2 {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button>执行动画</button>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 点击按钮执行动画，更改元素位置
+        var btn = $("button");
+        
+        btn.click(function () {
+            // // css更改盒子的位置 
+            // $(".box1").css({
+            //     left:500,
+            //     top:800,
+            // })
+            // 动画效果
+            // $(".box1").animate({
+            //     left:500,
+            //     top:800,
+            // }, 2000)
+            // 同一个元素添加两个动画，会顺序运行
+            // $(".box1").animate({
+            //     left:500,
+            //     top:800,
+            // }, 2000)
+            
+            // $(".box1").animate({
+            //     left:0,
+            //     top:0,
+            // }, 2000)
+
+            // 不同元素添加动画，会同时执行
+            $(".box1").animate({
+                left:500,
+                top:800,
+            }, 2000)
+
+            $(".box2").animate({
+                left:500,
+                top:800,
+            }, 2000)
+        });
+    </script>
+</body>
+</html>
