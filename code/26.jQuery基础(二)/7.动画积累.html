@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .box1 {
+            background-color: pink;
+        }
+
+        .box2 {
+            background-color: skyblue;
+            opacity: 0.3;
+            left: 400px;
+            top: -210px;
+        }
+        
+        .box3 {
+            background-color: yellowgreen;
+            opacity: 0.3;
+            top: -20px;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">去广州</button>
+    <button class="btn2">去北京</button>
+
+    <div class="box1"></div>
+    <div class="box2">广州</div>
+    <div class="box3">北京</div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 点击按钮执行动画，更改元素位置
+        var btn1 = $(".btn1");
+        var btn2 = $(".btn2");
+        
+        // 去广州
+        btn1.click(function () {
+            // 向右移动200px
+            $(".box1").animate({left:400},2000);
+        })
+        
+        // 去北京
+        // btn2.click(function () {
+        //     // 向下移动400
+        //     $(".box1").animate({top:400, left:400},2000);
+        // })
+
+        // 策略一、放弃原有任务，立即执行新的任务
+        // btn2.click(function () {
+        //     // 向下移动400
+        //     $(".box1").stop(true).animate({top:400,left:400},2000);
+        // })
+
+        // 第二个策略：只有当元素不运动的时候，才接受新的任务
+        btn2.click(function () {
+            // 向下移动400
+            // 判断是否在动画
+            if ($(".box1").is(":animated")) {
+                return
+            };
+            $(".box1").stop(true).animate({top:400,left:400},2000);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .box1 {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">执行</button>
+    <div class="box1"></div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 点击按钮执行动画，更改元素位置
+        var btn = $(".btn");
+        
+        btn.click(function () {
+            // 向右移动200px
+            $(".box1").animate({left:200},2000);
+            // 向下移动400
+            $(".box1").animate({top:400},2000);
+            // 向右移动200,立即停止第一个动画，进入第二个动画
+            // $(".box1").stop().animate({left:400},2000);
+            // 立即执行完第一个动画，进入第二个动画
+            // $(".box1").stop(false,true).animate({left:400},2000);
+            // 立即执行完第一个动画，并执行当前动画三
+            // $(".box1").stop(true,true).animate({left:400},2000);
+            // 立即执行完第一个动画，并执行当前动画三,等同于上述
+            $(".box1").stop(true,false).animate({left:400},2000);
+        })
+    </script>
+</body>
+</html>

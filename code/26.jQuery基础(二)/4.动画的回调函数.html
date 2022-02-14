@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .box1 {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button>执行动画</button>
+    <div class="box1"></div>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 点击按钮执行动画，更改元素位置
+        var btn = $("button");
+        
+        btn.click(function () {
+
+            // 盒子移动到800位置改变背景色
+            $(".box1").animate({left:800}, 2000, 
+                // 回调函数
+                function () {
+                    $(".box1").css({
+                        backgroundColor:"skyblue",
+                })
+            })
+
+        });
+    </script>
+</body>
+</html>
