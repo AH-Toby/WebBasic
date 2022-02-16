@@ -11,12 +11,20 @@
     <div class="list">
         <div class="imgs">
             <!-- 添加猫腻图 -->
+            <!-- 0 -->
             <img src="img/5.jpg" alt="">
+            <!-- 1 -->
             <img src="img/1.jpg" alt="">
+            <!-- 2 -->
             <img src="img/2.jpg" alt="">
+            <!-- 3 -->
             <img src="img/3.jpg" alt="">
+            <!-- 4 -->
             <img src="img/4.jpg" alt="">
+            <!-- 5 -->
             <img src="img/5.jpg" alt="">
+            <!-- 6 -->
+            <!-- 添加猫腻图 -->
             <img src="img/1.jpg" alt="">
         </div>
         <ul class="btns">
@@ -36,42 +44,51 @@
     <!-- 引入jq文件 -->
     <script src="./js/jquery-1.12.3.js"></script>
     <script>
-        // 维护当前显示索引值
-        var index = 0;
+        // 获取元素对象
         var $list = $(".list");
         var $imgs =  $(".imgs");
         var $btns = $(".btns li");
         var $prev = $(".prev");
         var $next = $(".next");
-        var timebar = null;
-        // 更换图片方法
+        var timebar;
+
+        // 设置默认的第一张图片，也就是索引值1
+        var index = 1;
+        $imgs.css("left", -520);
+
+        // 图片切换
         function changeImage(fn) {
-            $imgs.stop(true).animate({left:-index*520}, 500, function() {
-                    // 更新小圆点，并且去除兄弟节点
-                    $btns
-                        .eq(index).addClass("choose")
-                        .siblings().removeClass("choose");
+            $imgs.stop(true).animate({left:index*-520}, 500, function () {
+                    // 设置当第0张时设置index=5,同时将位置移动到第五张位置
+                    if (index === 0) {
+                        index = 5;
+                    }else if (index===6) {
+                        index = 1;
+                    }
+                    $imgs.css("left", index*-520);
+                    
+                    // 设置圆点
+                    $btns.eq(index-1).addClass("choose").siblings().removeClass("choose");
                 });
-            fn && fn();
+                fn && fn();
         }
 
-        // 启动轮播
+        // 设置循环轮播,3s切换一张
         function startInterval() {
             timebar = setInterval(function () {
-                index = (index>=4) ? 0:index+1;
-                // 显示下一张
-                changeImage();
-            }, 3000);
+                // 切换图片
+                index++;
+                changeImage()
+            },3000)
         }
 
-        // 定时换图片
-        startInterval();
-        
+        startInterval()
+
         // 点击圆点直接切换
         $btns.click(function(){
             // 切换图片
             // 停止动画
-            index = $(this).index();  
+            index = $(this).index()+1;  
             clearInterval(timebar);
             // 启动动画
             // changeImage();
@@ -89,21 +106,25 @@
             $next.css({"visibility":"hidden"});
         })
 
-        // 点击切换箭头切换
+        // 点击箭头切换左右
+        // 右侧箭头
+        $next.click(function () {
+            // 1.清除定时器
+            clearInterval(timebar);
+            
+            // 2.更改索引值(边界处理)
+            index++;
+
+            // 3.切换动画
+            changeImage(startInterval);
+        });
+
+        // 点击左侧箭头切换
         $prev.click(function () {
             // 1.清除定时器
             clearInterval(timebar);
             // 2.更改索引值(边界处理)
-            index = (index<=0) ? 4:index-1;
-            // 3.切换动画
-            changeImage(startInterval);
-        })
-
-        $next.click(function () {
-            // 1.清除定时器
-            clearInterval(timebar);
-            // 2.更改索引值(边界处理)
-            index = (index>=4) ? 0:index+1;
+            index--;
             // 3.切换动画
             changeImage(startInterval);
         })

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/banner1.css">
+</head>
+<body>
+    <div class="list">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <ul class="btns">
+            <li class="choose"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="prev">
+            <div class="left-arrow"></div>
+        </div>
+        <div class="next">
+            <div class="right-arrow"></div>
+        </div>
+    </div>
+    <!-- 引入jq文件 -->
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script>
+        // 初始化默认状态
+        var $list = $(".list");
+        var $imgs = $(".list img");
+        var $btns = $(".btns li");
+        var $prev = $(".prev");
+        var $next = $(".next");
+        var index = 0;
+        
+        // 循环定时器
+        var timebar;
+
+        // 默认显示第一张图片
+        $imgs.eq(index).css("left",index*-520);
+
+
+        // 轮播函数
+        function startInterval() {
+            timebar = setInterval(changeImage,3000);    
+        }
+
+        // 切换图片
+        function changeImage(fn) {
+            // 定义一个开关,判断事件是否完毕
+            var num = 0;
+
+            function checkStart() {
+                num++;
+                // 如果两个都执行完，执行fn函数
+                if (num===2 && fn){
+                        fn();
+                    }
+            }
+
+            // 前一张图片向前移动
+            $imgs.eq(index).stop(true).animate({"left":-520}, 500, checkStart);
+            
+            // 显示下一张
+            index++;
+            // 判断边界
+            if (index>=5) {
+                index=0;
+            }
+
+            // 后一张图片向前移动，放在右侧,再移动
+            $imgs.eq(index).css("left", 520).stop(true).animate({"left":0}, 500, checkStart);
+            
+            // 处理圆点
+            $btns.eq(index).addClass("choose").siblings().removeClass("choose");
+        }
+
+        startInterval()
+        
+        // 左右按钮
+        // 移动到图片上显示左右按钮
+        $list.mouseenter(function () {
+            $prev.css({"visibility":"visible"});
+            $next.css({"visibility":"visible"});
+        })
+
+        $list.mouseleave(function () {
+            $prev.css({"visibility":"hidden"});
+            $next.css({"visibility":"hidden"});
+        })
+
+        // 点击箭头切换左右
+        // 右侧箭头
+        $next.click(function () {
+            // 清空定时器
+            clearInterval(timebar);
+            changeImage(startInterval);
+
+        });
+
+        // 点击左侧箭头切换
+        $prev.click(function () {
+            // 1.清除定时器
+            clearInterval(timebar);
+            // 2.更改索引值(边界处理)
+            index--;
+            
+            if (index<0) {
+                // 定位到最后
+
+            }
+
+            // 3.切换动画
+            // changeImage(startInterval);
+        })
+    </script>
+</body>
+</html>
