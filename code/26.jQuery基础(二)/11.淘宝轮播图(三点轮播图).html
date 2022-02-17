@@ -38,52 +38,46 @@
         var $prev = $(".prev");
         var $next = $(".next");
         var index = 0;
-        
+        var num;
         // 循环定时器
         var timebar;
 
         // 默认显示第一张图片
-        $imgs.eq(index).css("left",index*-520);
+        $imgs.eq(index).css("left",0);
 
 
-        // 轮播函数
+        // 轮播图
         function startInterval() {
-            timebar = setInterval(changeImage,3000);    
+            // 3秒切换一张图片
+            timebar = setInterval(changeImage,3000)
+
         }
 
-        // 切换图片
         function changeImage(fn) {
-            // 定义一个开关,判断事件是否完毕
-            var num = 0;
+            // 前一张向前移动
+            $imgs.eq(index).stop(true).animate({left:-520},500);
 
-            function checkStart() {
-                num++;
-                // 如果两个都执行完，执行fn函数
-                if (num===2 && fn){
-                        fn();
-                    }
-            }
-
-            // 前一张图片向前移动
-            $imgs.eq(index).stop(true).animate({"left":-520}, 500, checkStart);
-            
             // 显示下一张
             index++;
-            // 判断边界
-            if (index>=5) {
-                index=0;
+
+            // 判断右侧边界,重置索引
+            if (index > 4) {
+                index=0
             }
 
-            // 后一张图片向前移动，放在右侧,再移动
-            $imgs.eq(index).css("left", 520).stop(true).animate({"left":0}, 500, checkStart);
-            
-            // 处理圆点
+            // 下一张放到到待切换的位置，在向做移动本省宽度, 启动循环定时器
+            $imgs.eq(index).css("left", 520).stop(true).animate({left:0}, 500, function () {
+                // 执行结束判断是否开启循环定时器，存在就唤起不存在不运行
+                fn && fn();
+            });
+
+            // 设置下方圆点轮播
             $btns.eq(index).addClass("choose").siblings().removeClass("choose");
         }
 
+        // 启动轮播图
         startInterval()
-        
-        // 左右按钮
+
         // 移动到图片上显示左右按钮
         $list.mouseenter(function () {
             $prev.css({"visibility":"visible"});
@@ -98,9 +92,11 @@
         // 点击箭头切换左右
         // 右侧箭头
         $next.click(function () {
-            // 清空定时器
+            // 1.清除定时器
             clearInterval(timebar);
-            changeImage(startInterval);
+            // 2.更改索引值(边界处理)
+            // 3.启动定时器切换动画
+            changeImage(startInterval)
 
         });
 
@@ -108,16 +104,58 @@
         $prev.click(function () {
             // 1.清除定时器
             clearInterval(timebar);
+            // 前一张右滑
+            $imgs.eq(index).stop(true).animate({left:520},500);
+
             // 2.更改索引值(边界处理)
             index--;
-            
+
             if (index<0) {
                 // 定位到最后
-
+                index = 4
             }
 
-            // 3.切换动画
-            // changeImage(startInterval);
+            // 下一张放到到待切换的位置，在向做移动本省宽度, 启动循环定时器
+            $imgs.eq(index).css("left", -520).stop(true).animate({left:0}, 500, startInterval);
+            
+            // 设置下方圆点轮播
+            $btns.eq(index).addClass("choose").siblings().removeClass("choose");
+        })
+
+        // 下侧圆点切换图片位置
+
+        // 点击圆点直接切换
+        $btns.click(function(){
+            // 1.停止动画
+            clearInterval(timebar);
+            // 2.获取圆点位置
+            node_index = $(this).index(); 
+
+            // 对比
+            if (node_index > index){
+                // 前一张移动走
+                $imgs.eq(index).stop(true).animate({left:-520},500);
+                index = node_index
+                
+                // 把这张照片移动到前面
+                $imgs.eq(index).css("left", 520).stop(true).animate({left:0}, 500, startInterval);
+
+                // 设置下方圆点轮播
+                $btns.eq(index).addClass("choose").siblings().removeClass("choose");
+            } else if (node_index < index) {
+                // 前一张右滑
+                $imgs.eq(index).stop(true).animate({left:520},500);
+                // 2.更改索引值(边界处理)
+                index = node_index;
+                
+                // 下一张放到到待切换的位置，在向做移动本省宽度, 启动循环定时器
+                $imgs.eq(index).css("left", -520).stop(true).animate({left:0}, 500, startInterval);
+                
+                // 设置下方圆点轮播
+                $btns.eq(index).addClass("choose").siblings().removeClass("choose");
+            } else {
+                startInterval();
+            }
         })
     </script>
 </body>
