@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="list">
-        <img src="img/1.jpg" alt="">
+        <img src="img/1.jpg" alt="" class="choose">
         <img src="img/2.jpg" alt="">
         <img src="img/3.jpg" alt="">
         <img src="img/4.jpg" alt="">
         <img src="img/5.jpg" alt="">
-        <div class="contianer"></div>
+        <div class="content"></div>
         <ul class="btns">
             <li class="choose"></li>
             <li></li>
@@ -32,6 +32,87 @@
     <!-- 引入jq文件 -->
     <script src="./js/jquery-1.12.3.js"></script>
     <script>
+        // 获取元素
+        var $img = $(".list img");
+        var $btn = $(".btns li");
+        var $content = $(".content");
+        var timebar;
+
+        // 当前显示图片序号
+        var imageId = 1;
+
+        // 创建div 3行5列,div
+        for (var i = 0; i < 3; i++) {
+            // 创建行元素
+            // $()方法内部，书写标签就会创建元素
+            var row = $("<div class='row' />")
+            
+            for (var j = 0; j < 5; j++) {
+                // 创建列元素
+                var col = $("<div class='col' />")
+                // 将列放入行内
+                row.append(col)
+            }
+            // 行放入content中
+            $content.append(row)
+        }
+
+        // 渲染第二张图片
+        $content.find(".col").each(function (index) {
+            // 求出行号列号，整数部分行号，余数列号
+            // console.log(index, parseInt(index/5), index % 5)
+            // 设置背景位置
+            $(this).css({
+                backgroundPositionX: -(index % 5)*104,
+                backgroundPositionY: -parseInt(index/5)*93,
+                top:93*parseInt(index/5),
+                left:104*(index%5),
+            });
+        });
+        
+
+        // 设置背景图片位置
+        function changeImage() {
+            // 判断边界
+            if (imageId > $img.length) {
+                imageId = 1;
+            } else if (imageId < 1) {
+                imageId = $img.length;
+            }
+
+            $content.find(".col").css({
+                backgroundImage:"url(img/" + imageId + ".jpg)",
+                width:0,
+                height:0,
+                opacity:0,
+            }).each(function () {
+                // 每一个元素设置不同时间动画
+                $(this).stop(true).animate({
+                    width:104,
+                    height:93,
+                    opacity:1,
+                }, 500+500*Math.random())
+            })
+            // 更新小圆点
+            $btn.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
+        }
+
+        
+        // 轮播
+        function startInterval() {
+            timebar = setInterval(function () {
+                // 页面要显示前一张图片
+                // $img.eq(imageId).addClass("choose").siblings().removeClass("choose");
+
+                // 更改id
+                imageId++;
+                
+                // 启动动画
+                changeImage();
+            },3000)
+        }
+
+        startInterval();
     </script>
 </body>
 </html>

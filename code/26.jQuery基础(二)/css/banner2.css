@@ -16,6 +16,34 @@
 .list img {
     width: 520px;
     height: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.list img.choose {
+    display: block;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 520px;
+    height: 279px;
+}
+
+/* .content .row {
+    height: 93px;
+    position: relative;
+} */
+
+.content .row .col {
+    /* width: 104px;
+    height: 93px; */
+    display: inline-block;
+    position: absolute;
 }
 
 .prev,
