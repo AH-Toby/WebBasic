@@ -39,9 +39,9 @@
     position: relative;
 } */
 
-.content .row .col {
-    /* width: 104px;
-    height: 93px; */
+.content .col {
+    width: 104px;
+    height: 93px;
     display: inline-block;
     position: absolute;
 }

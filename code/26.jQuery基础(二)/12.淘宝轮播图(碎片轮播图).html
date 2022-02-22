@@ -33,9 +33,12 @@
     <script src="./js/jquery-1.12.3.js"></script>
     <script>
         // 获取元素
+        var $list = $(".list") 
         var $img = $(".list img");
         var $btn = $(".btns li");
         var $content = $(".content");
+        var $prev = $(".prev");
+        var $next = $(".next");
         var timebar;
 
         // 当前显示图片序号
@@ -43,24 +46,19 @@
 
         // 创建div 3行5列,div
         for (var i = 0; i < 3; i++) {
-            // 创建行元素
-            // $()方法内部，书写标签就会创建元素
-            var row = $("<div class='row' />")
-            
             for (var j = 0; j < 5; j++) {
                 // 创建列元素
                 var col = $("<div class='col' />")
                 // 将列放入行内
-                row.append(col)
+                // row.append(col)
+                $content.append(col)
             }
-            // 行放入content中
-            $content.append(row)
         }
 
         // 渲染第二张图片
         $content.find(".col").each(function (index) {
             // 求出行号列号，整数部分行号，余数列号
-            // console.log(index, parseInt(index/5), index % 5)
+            console.log(index, parseInt(index/5), index % 5)
             // 设置背景位置
             $(this).css({
                 backgroundPositionX: -(index % 5)*104,
@@ -72,7 +70,7 @@
         
 
         // 设置背景图片位置
-        function changeImage() {
+        function changeImage(fn) {
             // 判断边界
             if (imageId > $img.length) {
                 imageId = 1;
@@ -95,6 +93,9 @@
             })
             // 更新小圆点
             $btn.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
+            
+            // 判断是否启动轮播
+            fn&&fn();
         }
 
         
@@ -102,7 +103,7 @@
         function startInterval() {
             timebar = setInterval(function () {
                 // 页面要显示前一张图片
-                // $img.eq(imageId).addClass("choose").siblings().removeClass("choose");
+                $img.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
 
                 // 更改id
                 imageId++;
@@ -113,6 +114,63 @@
         }
 
         startInterval();
+
+        // 移动到图片上显示左右按钮
+        $list.mouseenter(function () {
+            $prev.css({"visibility":"visible"});
+            $next.css({"visibility":"visible"});
+        })
+
+        $list.mouseleave(function () {
+            $prev.css({"visibility":"hidden"});
+            $next.css({"visibility":"hidden"});
+        })
+
+        // 点击箭头切换左右
+        // 右侧箭头
+        $next.click(function () {
+            // 1.清除定时器
+            clearInterval(timebar);
+            // 显示上一张图片
+            $img.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
+            
+            // 2.更改索引值(边界处理)
+            imageId++;
+
+            // 3.启动定时器切换动画
+            changeImage(startInterval)
+
+        });
+
+        // 点击左侧箭头切换
+        $prev.click(function () {
+            // 1.清除定时器
+            clearInterval(timebar);
+            // 显示上一张图片
+            $img.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
+            
+            // 2.更改索引值(边界处理)
+            imageId--;
+
+            // 3.启动定时器切换动画
+            changeImage(startInterval)
+        })
+
+        // 点击小圆点切换
+        $btn.click(function () {
+            // 1.停止动画
+            clearInterval(timebar);
+            
+            // 显示上一张图片
+            $img.eq(imageId-1).addClass("choose").siblings().removeClass("choose");
+            
+            // 2.更新索引
+            imageId = $(this).index()+1;
+            
+            // 3.启动轮播
+            changeImage(startInterval)
+        })    
+        
     </script>
 </body>
 </html>
