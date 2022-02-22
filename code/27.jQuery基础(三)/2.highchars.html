@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在其中绘制图表 -->
+    <div id="app">
+
+    </div>
+
+    <script src="./js/jquery-1.12.3.js"></script>
+    <script src="./js/highcharts.js"></script>
+    <script>
+        var $app = $("#app");
+        // 绘制图表
+        $app.highcharts({
+            // 标题
+            title:{
+                text:"出勤统计表",
+            },
+            // 坐标轴
+            xAxis:{
+                title:{
+                    text:"星期"
+                },
+                
+                categories: ["星期一","星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],
+            },
+
+            yAxis: {
+                title: {
+                    text: '出勤次数',                // y 轴标题
+                }
+            },
+
+            series:[{
+                name:"小华",
+                data:[30,29,28,32,35,36,37]
+            }],
+
+            credits: {
+                text:"版权",
+            },
+        })
+    </script>
+</body>
+</html>

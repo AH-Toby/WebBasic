@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <h1>4</h1>
+    <h1>5</h1>
+    <h1>6</h1>
+    <h1>7</h1>
+    <h1>8</h1>
+    <h1>9</h1>
+    <h1>10</h1>
+    <h1>11</h1>
+    <h1>12</h1>
+    <h1>13</h1>
+    <h1>14</h1>
+    <h1>15</h1>
+    <h1>16</h1>
+    <h1>17</h1>
+    <h1>18</h1>
+    <h1>19</h1>
+    <h1>20</h1>
+    <h1>21</h1>
+    <h1>22</h1>
+    <h1>23</h1>
+    <h1>24</h1>
+    <h1>25</h1>
+    <h1>26</h1>
+    <h1>27</h1>
+    <h1>28</h1>
+    <h1>29</h1>
+    <h1>30</h1>
+    <script>
+        // 定义数字
+        var num = 0;
+        var timebar;
+
+        // 定义函数
+        function demo() {
+            console.log(++num);
+        }
+        
+        // 一、基于操作：在高频事件中，执行最后一次
+        // 高频事件：滚动事件
+        // window.onscroll = function () {
+        //     // 1.将函数放在定时器中，每次触发事件取消执行，
+        //     // clearTimeout(timebar);
+        //     // // 直到最后一次
+        //     // timebar = setTimeout(demo, 200);
+        //     // 这种基于操作的节流也被称之为防抖
+            
+        //     // 2.使用防抖函数
+        //     throttle(demo);
+        // }
+
+        // 封装防抖函数
+        function throttle(fn) {
+            // 清除定时器
+            clearTimeout(fn.__timebar)
+            // 执行定时器
+            // 函数添加属性
+            fn.__timebar = setTimeout(fn, 200)
+        }
+
+        // 二、基于时间的节流
+        // 定义锁
+        // var lock = false;
+        window.onscroll = function () {
+            // 为true不能执行
+            // if (lock) {
+            //     return;
+            // }
+
+            // 设置锁
+            // lock = true;
+
+            // // 在1s之内无论事件触发多少次，函数只执行一次
+            // demo();
+
+            // // 启动定时器1s后解除锁
+            // setTimeout(function () {
+            //     lock = false;
+            // }, 1000)
+
+            // 2.使用节流函数
+            throttle(demo);
+        }
+
+        // 节流器方法
+        function throttle(fn) {
+            // 定义锁
+            // __lock为真表示被锁
+            if(fn.__lock){
+                return;
+            }
+            // 添加锁
+            fn.__lock = true;
+            fn();
+
+            // 1s后解锁
+            setTimeout(function () {
+                fn.__lock = false; 
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
