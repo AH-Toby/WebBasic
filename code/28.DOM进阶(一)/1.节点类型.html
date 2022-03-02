@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        hello word!
+        <div class="one"></div>
+        <!-- 注释 -->
+    </div>
+<script>
+    // 获取元素
+    var app = document.getElementById("app");
+    // 元素节点
+    console.log("元素节点", app.nodeType);
+    // 文档节点
+    console.log("文档节点", document.nodeType);
+
+    // 查看节点数量
+    console.log("节点数量", app.childNodes.length);
+
+    // 查看每一个节点
+    for (var i = 0; i < app.childNodes.length; i++) {
+        console.log("获取节点",app.childNodes[i])
+    }
+
+    // 解决兼容性问题，让所有浏览器都显示一致
+    // 忽略换行符
+    function getNodes(dom) {
+        // 返回包含所有节点的数组
+        var arr = [];
+        // 定义一个正则来判断换行符
+        var reg = /^\s*$/
+
+        // 遍历所有系欸按，过滤换行符节点
+        for (var i = 0; i < dom.childNodes.length; i++) {
+            nodeObj = dom.childNodes[i]
+
+            // 如果是文本节点，要过滤换行符
+            if (nodeObj.nodeType === 3) {
+
+                if (!reg.test(nodeObj.data)) {
+                    arr.push(nodeObj);
+                }
+            } else {
+                // 其他类型节点
+                arr.push(nodeObj);
+            }
+        }
+        return arr;
+    }
+console.log(getNodes(app));
+</script>
+</body>
+</html>

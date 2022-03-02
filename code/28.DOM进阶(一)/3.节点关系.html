@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 写在一行，防止换行符对程序得影响 -->
+    <div id="app"><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul></div>
+<script src="./js/comment.js"></script>
+<script>
+    var app = document.getElementById("app");
+    var ul = app.getElementsByTagName("ul")[0];
+
+    // 节点关系
+    // 获取所有的子节点
+    console.log(ul.childNodes);
+    // 获取第一个元素
+    console.log(ul.firstChild);
+    // 获取最后一个元素
+    console.log(ul.lastChild);
+    
+    // 子父关系
+    // 获取第3个节点
+    var li = ul.childNodes[2]
+
+    // 获取到父节点
+    console.log(li.parentNode);
+    
+    // 兄弟节点
+    // 下一个节点
+    console.log(li.nextSibling);
+
+    // 获取上一个节点
+    console.log(li.previousSibling);
+    
+    // 后一个颜色背景色添加粉色
+    li.nextSibling.style.backgroundColor = "pink";
+    
+</script>
+</body>
+</html>

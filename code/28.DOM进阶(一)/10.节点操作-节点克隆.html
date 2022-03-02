@@ -1,0 +1,37 @@
+<html lang="en">
+    <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+    <div id="app2">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <div id="app3"></div>
+<script src="./js/comment.js"></script>
+<script>
+// 创建h1元素
+var h1 = document.createElement("h1");
+// 创建文本
+var text = document.createTextNode("创建文本");
+var text2 = document.createTextNode("插入到第一个");
+
+// 节点上树
+var app = document.getElementById("app");
+var ul = document.getElementById("app2").getElementsByTagName("ul")[0];
+var app3 = document.getElementById("app3")
+
+// 节点克隆，将app2中内容克隆到app3中
+var ulNode = ul.cloneNode(true)
+app3.appendChild(ulNode)
+</script>
+</body>
+</html>
