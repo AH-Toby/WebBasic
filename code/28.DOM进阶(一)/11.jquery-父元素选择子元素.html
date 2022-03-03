@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>    
+<script src="./js/jquery-1.12.3.js"></script>
+<script>
+    // 创建节点
+    var h1 = $("<h1>append</h1>")
+    var h2 = $("<h1>prepend</h1>")
+    // 简写：var h1 = $("<h1 />")
+    // 如果有内容建议使用第一种，如果没有内容建议使用第二种
+    console.log(h1)
+
+    // 父元素选择子元素上树
+    $("#app").append(h1);
+    $("#app").prepend(h2);
+</script>
+</body>
+</html>

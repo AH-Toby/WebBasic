@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>1</div>
+        <div>2</div>
+        <div class="div3">3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <hr>
+    <div id="app2"></div>
+<script src="./js/jquery-1.12.3.js"></script>
+<script>
+    // 创建节点
+    var h1 = $("<h1>after</h1>");
+    var h2 = $("<h1>before</h1>");
+    var h3 = $("<h1>insertBefore</h1>");
+    var h4 = $("<h1>insertAfter</h1>");
+    
+    // 外部包装
+    // 逐个包装
+    // $("#app div").wrap("<div class=demo />");
+    // 整体包装
+    // $("#app div").wrapAll("<div class=demo />");
+    // 去除外部包装
+    // $("#app div").unwrap();
+    // 替换元素
+    // $("#app div").replaceWith("<h1>replaceWith</h1>");
+    // $("<h1>replaceWith</h1>").replaceAll("#app div");
+    // 清除后代
+    // $("#app").empty();
+    // 删除元素
+    // $("#app div").remove();
+    // 克隆元素
+    var result = $("#app").clone(false)
+    console.log(result)
+    $("#app2").append(result)
+</script>
+</body>
+</html>
