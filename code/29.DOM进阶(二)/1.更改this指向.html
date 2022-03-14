@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // 定义方法
+        function func() {
+            // 打印指向
+            console.log(this, arguments)
+        }
+
+        // 执行
+        // this指向window
+        // func();
+        
+        // 通过call来改变this的指向
+        func.call(document, 1,2,3);
+        // 通过apply来改变this指向
+        func.apply(document, [1, 2, 3, 4]);
+        
+        // // 对象
+        // var obj = {
+        //     a:func
+        // }
+        // // 执行对象a方法
+        // // this指向对象
+        // obj.a();
+
+        // // this指向btn
+        // btn = document.getElementById("btn");
+        // btn.onclick = func;
+        
+        // // this指向body
+        // document.body.onclick = func;
+
+    </script>
+</body>
+</html>
