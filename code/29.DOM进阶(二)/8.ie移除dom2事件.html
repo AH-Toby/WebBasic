@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">移除事件</button>
+    <div id="box"></div>
+    <script>
+        // 点击按钮，移除box事件
+        // 获取元素
+        var box = document.getElementById("box");
+        var btn = document.getElementById("btn");
+
+        // 将方法单独封装成一个函数
+        function fn() {
+            console.log("success", 111);
+        }
+        // box绑定事件,在哪个阶段绑定就要在哪个阶段移除
+        box.attachEvent("onclick", fn);
+        
+        // 点击按钮移除事件
+        btn.onclick = function () {
+            // 移除事件
+            box.detachEvent("onclick", fn);
+        }
+
+    </script>
+</body>
+</html>

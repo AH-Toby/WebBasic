@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // 获取按钮
+        var btn = document.getElementById("btn");
+
+        // // dom0级，绑定事件
+        btn.onclick = function () {
+            console.log("click1",111)
+        }
+        
+        // // 后面会覆盖前面
+        // btn.onclick = function () {
+        //     console.log("click2",222)
+        // }
+        // 解决方法
+        // 将原有的缓存起来
+        var fn = btn.onclick;
+        btn.onclick = function () {
+            // 先执行缓存
+            fn();
+            console.log("click2", 222, this)
+        }
+
+        // dom2级，绑定事件
+        btn.attachEvent("onclick", function () {
+            console.log("attachEvent1", 111, this)
+        })
+        // 会依次运行
+        btn.attachEvent("onclick", function () {
+            console.log("attachEvent2", 222, this)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">移除事件</button>
+    <div id="box"></div>
+    <script>
+        // 点击按钮，移除box事件
+        // 获取元素
+        var box = document.getElementById("box");
+        var btn = document.getElementById("btn");
+
+        // 将方法单独封装成一个函数
+        function fn() {
+            console.log("success")
+        }
+        // box绑定事件,在哪个阶段绑定就要在哪个阶段移除
+        // box.addEventListener("click", fn, true);
+        
+        // dom0绑定事件
+        box.onclick = fn
+
+        // 当绑定多个事件的时候，移除的事件对其他事件没有影响
+        // box.addEventListener("click", function () {
+        //     console.log("success2")
+        // });
+        
+        // 点击按钮移除事件
+        // btn.onclick = function () {
+        //     // 移除事件
+        //     box.removeEventListener("click", fn, true)
+        // }
+        // 移除dom0级别事件
+        // dom0级事件是通过元素的属性绑定的,因此删除该属性就可以取消绑定
+        btn.onclick = function () {
+            // 移除事件
+            box.onclick = null;
+        }
+    </script>
+</body>
+</html>
