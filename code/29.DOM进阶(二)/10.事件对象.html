@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 1000px;
+            padding-top: 200px;
+            background-color: pink;
+        }
+        #box2 {
+            height: 400px;
+            border: 100px solid yellow;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <script>
+        // box2绑定事件
+        var box2 = document.getElementById("box2");
+        box2.addEventListener("click",function (e) {
+            // console.log(arguments);
+            // 获取属性
+            console.log("offsetX,offsetY", e.offsetX, e.offsetY);
+            console.log("clientX,clientY", e.clientX, e.clientY);
+            console.log("pageX,pageY", e.pageX, e.pageY);
+            console.log("screenX,screenY", e.screenX, e.screenY);
+        })
+
+    </script>
+</body>
+</html>
