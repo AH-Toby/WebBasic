@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            margin: 50px;
+            border: 50px solid yellowgreen;
+            padding: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+        #box2 {
+            margin: 50px;
+            border: 50px solid skyblue;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <script>
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+
+        // 快捷尺寸
+        // client:content+padding=100px+50+50=200
+        console.log("client", box2.clientWidth, box2.clientHeight);
+        // offset:content+padding+border = 300
+        console.log("offset", box2.offsetWidth, box2.offsetHeight);
+        // clientLeft:border
+        console.log("clientl-t", box2.clientLeft, box2.clientTop);
+
+
+    </script>
+</body>
+</html>
