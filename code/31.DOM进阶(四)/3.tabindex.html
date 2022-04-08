@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 控制输入焦点顺序 -->
+    <input type="text", tabindex="7">
+    <input type="text", tabindex="6", id="inp1">
+    <input type="text", tabindex="5">
+    <ul>
+        <li tabindex="4">1</li>
+        <li tabindex="3">2</li>
+        <li tabindex="2" id="li2">3</li>
+        <li tabindex="1">4</li>
+    </ul>
+    <script>
+        // 触发焦点
+        var inp1 = document.getElementById("inp1");
+        inp1.addEventListener("focus",function (e) {
+            console.log("获取到焦点")
+        });
+
+        inp1.addEventListener("blur", function () {
+            console.log("失去焦点")
+        })
+    </script>
+</body>
+</html>

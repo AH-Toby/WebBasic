@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text"> -->
+    <script>
+        // 监听键盘事件
+        // 键盘按下
+        document.onkeydown = function (e) {
+            console.log("keydown", e.keyCode, e, e.key)
+        }
+        // 键盘弹起
+        document.addEventListener("keyup", function () {
+            console.log("keyup")
+        })
+        // 字符输入
+        document.addEventListener("keypress", function () {
+            console.log("keypress")
+        })
+    </script>
+</body>
+</html>
