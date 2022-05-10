@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div tabindex="1">1111</div>
+    <input type="text">
+    <script>
+        // 绑定事件
+        // document对象
+        document.onkeydown = function () {
+            console.log("document key down")
+        }
+        
+        // div绑定事件,要想让其绑定键盘事件必须先获取焦点所以属性加上tabindex
+        document.getElementsByTagName("div")[0].onkeydown = function () {
+            console.log("div key down")
+        }
+
+        // input绑定事件
+        document.getElementsByTagName("input")[0].onkeydown = function () {
+            console.log("input key down")
+        }
+    </script>
+</body>
+</html>
